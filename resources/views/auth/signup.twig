@@ -1,0 +1,52 @@
+{% extends 'templates/app.twig' %}
+
+{% block content %}
+    <div class="row">
+        <div class="col-md-6 col-md-offset-3">
+            <div class="panel panel-default">
+
+                <div class="panel-heading">
+                    SignUp
+                </div>
+
+                <div class="panel-body">
+                    <form action="{{ path_for('auth.signup') }}" method="post">
+                        <div class="form-group{{ errors.email ? ' has-error':'' }}">
+                            <label for="email">Email address</label>
+                            <input type="email" class="form-control" name="email" id="email" placeholder="email@domain.com" value="{{ old.email }}"
+                            >
+                            {% if errors.email %}
+                                <span class="help-block">{{ errors.email | first }}</span>
+                            {% endif %}
+                        </div>
+
+                        <div class="form-group{{ errors.name ? ' has-error':'' }}">
+                            <label for="name">Name</label>
+                            <input type="text" class="form-control"
+                                   name="name" id="name"
+                                   placeholder="Your Name"
+                                   value="{{ old.name }}"
+                            >
+                            {% if errors.name %}
+                                <span class="help-block">{{ errors.name | first }}</span>
+                            {% endif %}
+                        </div>
+
+                        <div class="form-group{{ errors.password ? ' has-error':'' }}">
+                            <label for="password">Password</label>
+                            <input type="password" class="form-control" name="password" id="password">
+                            {% if errors.password %}
+                                <span class="help-block">{{ errors.password | first }}</span>
+                            {% endif %}
+                        </div>
+
+                        <button type="submit" class="btn btn-default">Sign Up</button>
+
+                        {{ csrf.field | raw }}
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
