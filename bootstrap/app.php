@@ -18,21 +18,21 @@ $app = new \Slim\App([
             'password' => '',
             'charset' => 'utf8',
             'collation' => 'utf8_unicode_ci',
-            'prefix'    => '',
+            'prefix' => '',
         ]
     ]
 ]);
 
 $container = $app->getContainer();
 
-$capsule =  new Illuminate\Database\Capsule\Manager;
+$capsule = new Illuminate\Database\Capsule\Manager;
 $capsule->addConnection($container['settings']['db']);
 // Make this Capsule instance available globally via static methods... (optional)
 $capsule->setAsGlobal();
 // Setup the Eloquent ORM... (optional; unless you've used setEventDispatcher())
 $capsule->bootEloquent();
 
-$container['db']    =   function($container) use($capsule){
+$container['db'] = function ($container) use ($capsule) {
     return $capsule;
 };
 
@@ -41,14 +41,24 @@ $container['view'] = function ($container) {
         'cache' => false,
     ]);
 
+    $container['auth'] = function ($container) {
+        return new \App\Auth\Auth;
+    };
+
     $view->addExtension(new Slim\Views\TwigExtension(
         $container->router,
         $container->request->getUri()
     ));
+
+    $view->getEnvironment()->addGlobal('auth', [
+        'check' => $container->auth->check(),
+        'user'  => $container->auth->user(),
+    ]);
+
     return $view;
 };
 
-$container['validator']  =   function($container){
+$container['validator'] = function ($container) {
     return new App\Validation\Validator;
 };
 
