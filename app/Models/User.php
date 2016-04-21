@@ -8,4 +8,12 @@ class User extends Model{
     protected $fillable =   [
         'email', 'name', 'password'
     ];
+
+    public function setPassword($pasword)
+    {
+        $this->update([
+            'password' => password_hash($pasword, PASSWORD_DEFAULT)
+        ]);
+
+    }
 }

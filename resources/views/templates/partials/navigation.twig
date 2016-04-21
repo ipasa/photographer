@@ -24,9 +24,9 @@
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
                            aria-expanded="false">{{ auth.user.name }} <span class="caret"></span></a>
                         <ul class="dropdown-menu">
-                            <li><a href="#">Change Password</a></li>
+                            <li><a href="{{ path_for('auth.password.change') }}">Change Password</a></li>
                             <li role="separator" class="divider"></li>
-                            <li><a href="#">Log Out</a></li>
+                            <li><a href="{{ path_for('auth.signout') }}">Log Out</a></li>
                         </ul>
                     </li>
                 {% else %}

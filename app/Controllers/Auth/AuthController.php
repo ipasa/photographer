@@ -22,10 +22,11 @@ class AuthController extends Controller{
         );
 
         if (!$auth){
-            //Flash Message Here
+            $this->flash->addMessage('error', 'You could not sign in with this details');
             return $response->withRedirect($this->router->pathFor('auth.signin'));
         }
 
+        $this->flash->addMessage('success', 'You have been Signed In Successfully');
         return $response->withRedirect($this->router->pathFor('home'));
 
     }
@@ -54,10 +55,19 @@ class AuthController extends Controller{
             'password'  =>  password_hash($request->getParam('password'), PASSWORD_DEFAULT),
         ]);
 
+        $this->flash->addMessage('success', 'You have been Signed Up Successfully');
+
         $this->auth->attempt($user->email, $request->getParam('password'));
 
         return $response->withRedirect($this->router->pathFor('home'));
 
+    }
+
+    public function getSignOut($request, $response)
+    {
+        $this->auth->logout();
+        $this->flash->addMessage('success', 'You have been Signed out Successfully from our system');
+        return $response->withRedirect($this->router->pathFor('home'));
     }
 
 }
