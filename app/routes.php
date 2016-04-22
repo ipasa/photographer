@@ -4,6 +4,11 @@ use App\Middleware\Middleware\AuthMiddleware;
 
 $app->get('/', 'HomeController:index')->setName('home');
 
+$app->get('/image/upload', 'ImageController:getUpload')->setName('image.upload');
+$app->post('/image/upload', 'ImageController:postUpload');
+
+$app->get('/image/single/{id}', 'ImageController:getSingleImage');
+
 /**
  * Guest Middleware
  */

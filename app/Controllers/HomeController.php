@@ -2,10 +2,15 @@
 
 namespace App\Controllers;
 
+use App\Models\Image;
+
 class HomeController extends Controller
 {
-    public function index($request, $response)
+    public function index($request, $response, $args)
     {
-        return $this->view->render($response, 'home.twig');
+        $data   =   Image::all();
+        return $this->view->render($response, 'home.twig', [
+            'images' => $data
+        ]);
     }
 }

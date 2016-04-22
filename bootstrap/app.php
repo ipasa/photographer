@@ -53,6 +53,7 @@ $container['view'] = function ($container) {
         $container->router,
         $container->request->getUri()
     ));
+    $view->addExtension(new Twig_Extension_Debug());
 
     $view->getEnvironment()->addGlobal('auth', [
         'check' => $container->auth->check(),
@@ -70,6 +71,10 @@ $container['validator'] = function ($container) {
 
 $container['HomeController'] = function ($container) {
     return new App\Controllers\HomeController($container);
+};
+
+$container['ImageController'] = function ($container) {
+    return new App\Controllers\Image\ImageController($container);
 };
 
 $container['AuthController'] = function ($container) {

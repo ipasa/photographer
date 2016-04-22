@@ -1,0 +1,82 @@
+{% extends 'templates/app.twig' %}
+
+{% block content %}
+    <section class="pageheader">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9">
+                    <h4>Image Upload Interface</h4>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section white">
+        <div class="container">
+
+            <div class="row">
+                <div class="col-md-6 col-md-offset-3">
+                    <div class="module">
+
+                        <form role="form" action="{{ path_for('image.upload') }}" method="POST"
+                              enctype="multipart/form-data">
+                            <div class="form-group">
+                                <label for="exampleInputEmail1">IMAGE TITLE</label>
+                                <input type="text" name="image_title" class="form-control" id="exampleInputEmail1"
+                                       placeholder="Enter Image Description">
+                            </div>
+                            <div class="form-group">
+                                <label for="comments">IMAGE DESCRIPTION</label>
+                                <textarea class="form-control" name="image_description" id="comments" rows="8"
+                                          placeholder="Type here image description"></textarea>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="exampleInputFile">File input</label>
+                                <input type="file" name="image_link" class="btn btn-default" id="exampleInputFile">
+                            </div>
+
+                            <div class="select_wrap">
+                                <select name="image_category" class="form-control">
+                                    <option value="0">Uncategorized</option>
+                                    <option value="10">Abstract</option>
+                                    <option value="11">Animals</option>
+                                    <option value="5">Black and White</option>
+                                    <option value="1">Celebrities</option>
+                                    <option value="9">City &amp; Architecture</option>
+                                    <option value="15">Commercial</option>
+                                    <option value="16">Concert</option>
+                                    <option value="20">Family</option>
+                                    <option value="14">Fashion</option>
+                                    <option value="2">Film</option>
+                                    <option value="24">Fine Art</option>
+                                    <option value="23">Food</option>
+                                    <option value="3">Journalism</option>
+                                    <option value="8">Landscapes</option>
+                                    <option value="12">Macro</option>
+                                    <option value="18">Nature</option>
+                                    <option value="4">Nude</option>
+                                    <option value="7">People</option>
+                                    <option value="19">Performing Arts</option>
+                                    <option value="17">Sport</option>
+                                    <option value="6">Still Life</option>
+                                    <option value="21">Street</option>
+                                    <option value="26">Transportation</option>
+                                    <option value="13">Travel</option>
+                                    <option value="22">Underwater</option>
+                                    <option value="27">Urban Exploration</option>
+                                    <option value="25">Wedding</option>
+                                </select>
+                            </div>
+
+                            <button type="submit" class="btn btn-default btn-normal">Submit</button>
+                            {{ csrf.field | raw }}
+                        </form>
+
+
+                    </div><!-- end module -->
+                </div><!-- end col -->
+            </div><!-- end row -->
+        </div><!-- end container -->
+    </section><!-- end section -->
+{% endblock %}
