@@ -3,6 +3,7 @@
 namespace App\Controllers\Image;
 
 use App\Controllers\Controller;
+use App\Models\Categorylist;
 use App\Models\Image;
 
 
@@ -69,6 +70,13 @@ class ImageController extends Controller
 
     public function getSingleImage($request, $response, $args)
     {
-        var_dump($args['id']);
+        $id =   $args['id'];
+        $images = Image::where('id', $id)->first();
+        $category = Categorylist::where('id', $images->image_category)->first();
+
+        return $this->view->render($response, 'image/single.twig', [
+            'image'     =>  $images,
+            'category'  =>  $category
+        ]);
     }
 }

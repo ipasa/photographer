@@ -149,7 +149,7 @@
                             <img src="upload_image/{{ image.image_link }}" alt="" class="img-responsive">
                             <div class="magnifier">
                                 <div class="visible-buttons">
-                                    <h4><a href="portfolio-single-image.html">{{ image.image_title }}</a></h4>
+                                    <h4><a href="{{ path_for('singleimage', {'id': image.id}) }}">{{ image.image_title }}</a></h4>
                                     <p>{{ image.image_description }}</p>
                                 </div>
                             </div>

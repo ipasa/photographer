@@ -134,33 +134,23 @@
                                 {#</li>#}
                             {#</ul>#}
                         {#</li>#}
-                        <li class="dropdown yamm-half"><a href="#" data-toggle="dropdown" class="active dropdown-toggle">Pages <span class="fa fa-angle-down"></span></a>
+                        <li class="dropdown yamm-half"><a href="#" data-toggle="dropdown" class="active dropdown-toggle">Categories <span class="fa fa-angle-down"></span></a>
                             <ul class="dropdown-menu">
                                 <li>
                                     <div class="yamm-content">
                                         <div class="row">
                                             <div class="col-sm-6 col-sm-6">
                                                 <ul>
-                                                    <li><a href="page-about-1.html">About Us 01</a></li>
-                                                    <li><a href="page-about-2.html">About Us 02</a></li>
-                                                    <li><a href="page-about-3.html">About Us 03</a></li>
-                                                    <li><a href="page-services-1.html">Services 01</a></li>
-                                                    <li><a href="page-services-2.html">Services 02</a></li>
-                                                    <li><a href="page-services-3.html">Services 03</a></li>
-                                                    <li><a href="page-members-1.html">Team Members 01</a></li>
-                                                    <li><a href="page-members-2.html">Team Members 02</a></li>
+                                                    {% for category in categoryList.categories|slice(1, 13) %}
+                                                        <li><a href="{{ category.id }}">{{ category.category_name }}</a></li>
+                                                    {% endfor %}
                                                 </ul>
                                             </div><!-- end col -->
                                             <div class="col-sm-6 col-sm-6">
                                                 <ul>
-                                                    <li><a href="page-faqs-1.html">Faqs 01</a></li>
-                                                    <li><a href="page-faqs-2.html">Faqs 02</a></li>
-                                                    <li><a href="page-pricing-1.html">Pricing 01</a></li>
-                                                    <li><a href="page-pricing-2.html">Pricing 02</a></li>
-                                                    <li><a href="page-contact-1.html">Contact 01</a></li>
-                                                    <li><a href="page-contact-2.html">Contact 02</a></li>
-                                                    <li><a href="page-clients.html">Clients</a></li>
-                                                    <li><a href="page-login.html">Login / Register</a></li>
+                                                    {% for category in categoryList.categories|slice(14, 25) %}
+                                                        <li><a href="{{ category.id }}">{{ category.category_name }}</a></li>
+                                                    {% endfor %}
                                                 </ul>
                                             </div><!-- end col -->
                                         </div><!-- end row -->

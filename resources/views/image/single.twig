@@ -1,0 +1,140 @@
+{% extends 'templates/app.twig' %}
+
+{% block content %}
+    <section class="pageheader">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9">
+                    <h4>Single Image</h4>
+                </div>
+                <div class="col-md-3">
+                    <ol class="breadcrumb text-right">
+                        <li><a href="#">Home</a></li>
+                        <li>Portfolio</li>
+                        <li class="active">Single Project</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section white">
+        <div class="container">
+
+            <div class="row">
+                <div class="col-md-8">
+                    <div class="owl-single-portfolio-item">
+                        <img src="{{ base_url() }}/upload_image/{{ image.image_link }}" alt="" class="img-responsive">
+                    </div>
+                </div><!-- end col -->
+
+                <div class="col-md-4 single-portfolio-sidebar">
+
+                    <h3>{{ image.image_title}}</h3>
+
+                    <p>
+                        {{ image.image_description}}
+                    </p>
+
+                    <div class="contact-details portfolio-details">
+                        <div class="why-us-right text-left wow fadeInRight" data-wow-duration="1s" data-wow-delay="0.5s">
+                            <i class="fa fa-user alignleft"></i>
+                            <h4>Client</h4>
+                            <p>Ruben Frankilin</p>
+                        </div>
+                    </div>
+
+                    <div class="contact-details portfolio-details">
+                        <div class="why-us-right text-left wow fadeInRight" data-wow-duration="1s" data-wow-delay="0.9s">
+                            <i class="fa fa-magic alignleft"></i>
+                            <h4>Category</h4>
+                            <p><a href="#">{{ category.category_name}}</a></p>
+                        </div>
+                    </div>
+
+                    <div class="contact-details portfolio-details">
+                        <div class="why-us-right text-left wow fadeInRight" data-wow-duration="1s" data-wow-delay="1.3s">
+                            <i class="fa fa-calendar alignleft"></i>
+                            <h4>Date</h4>
+                            <p>{{ image.created_at }}</p>
+                        </div>
+                    </div>
+
+                    <div class="share-post clearfix">
+                        <div class="social">
+                            <h4>SHARE : </h4>
+                            <a href="#"><i class="icon icon-facebook"></i></a>
+                            <a href="#"><i class="icon icon-twitter"></i></a>
+                            <a href="#"><i class="icon icon-dribbble"></i></a>
+                            <a href="#"><i class="icon icon-tumblr"></i></a>
+                        </div><!-- end social -->
+                    </div>
+                </div><!-- end col -->
+            </div><!-- end row -->
+
+            <div class="line"></div>
+            <br><br>
+
+            <div class="row">
+                <div class="col-md-12">
+                    <h3>Related Projects</h3>
+                </div>
+            </div><!-- end row -->
+
+            <div class="row">
+                <div class="col-md-12">
+                    <div id="owl-portfolio-related" class="owl-custom">
+                        <div class="owl-single-portfolio-item">
+                            <div class="box entry">
+                                <img src="upload/portfolio_01.jpg" alt="" class="img-responsive">
+                                <div class="magnifier">
+                                    <div class="visible-buttons">
+                                        <h4><a href="portfolio-single-image.html">Booklet branding</a></h4>
+                                        <p>Web Design, Branding</p>
+                                    </div>
+                                </div>
+                            </div><!-- end box -->
+                        </div>
+
+                        <div class="owl-single-portfolio-item">
+                            <div class="box entry">
+                                <img src="upload/portfolio_02.jpg" alt="" class="img-responsive">
+                                <div class="magnifier">
+                                    <div class="visible-buttons">
+                                        <h4><a href="portfolio-single-image.html">Booklet branding</a></h4>
+                                        <p>Web Design, Branding</p>
+                                    </div>
+                                </div>
+                            </div><!-- end box -->
+                        </div>
+
+                        <div class="owl-single-portfolio-item">
+                            <div class="box entry">
+                                <img src="upload/portfolio_03.jpg" alt="" class="img-responsive">
+                                <div class="magnifier">
+                                    <div class="visible-buttons">
+                                        <h4><a href="portfolio-single-image.html">Booklet branding</a></h4>
+                                        <p>Web Design, Branding</p>
+                                    </div>
+                                </div>
+                            </div><!-- end box -->
+                        </div>
+
+                        <div class="owl-single-portfolio-item">
+                            <div class="box entry">
+                                <img src="upload/portfolio_04.jpg" alt="" class="img-responsive">
+                                <div class="magnifier">
+                                    <div class="visible-buttons">
+                                        <h4><a href="portfolio-single-image.html">Booklet branding</a></h4>
+                                        <p>Web Design, Branding</p>
+                                    </div>
+                                </div>
+                            </div><!-- end box -->
+                        </div>
+                    </div><!-- end owl -->
+                </div><!-- end col -->
+            </div><!-- end row -->
+        </div><!-- end container -->
+    </section>
+
+{% endblock %}

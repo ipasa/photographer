@@ -38,41 +38,15 @@
 
                             <div class="select_wrap">
                                 <select name="image_category" class="form-control">
-                                    <option value="0">Uncategorized</option>
-                                    <option value="10">Abstract</option>
-                                    <option value="11">Animals</option>
-                                    <option value="5">Black and White</option>
-                                    <option value="1">Celebrities</option>
-                                    <option value="9">City &amp; Architecture</option>
-                                    <option value="15">Commercial</option>
-                                    <option value="16">Concert</option>
-                                    <option value="20">Family</option>
-                                    <option value="14">Fashion</option>
-                                    <option value="2">Film</option>
-                                    <option value="24">Fine Art</option>
-                                    <option value="23">Food</option>
-                                    <option value="3">Journalism</option>
-                                    <option value="8">Landscapes</option>
-                                    <option value="12">Macro</option>
-                                    <option value="18">Nature</option>
-                                    <option value="4">Nude</option>
-                                    <option value="7">People</option>
-                                    <option value="19">Performing Arts</option>
-                                    <option value="17">Sport</option>
-                                    <option value="6">Still Life</option>
-                                    <option value="21">Street</option>
-                                    <option value="26">Transportation</option>
-                                    <option value="13">Travel</option>
-                                    <option value="22">Underwater</option>
-                                    <option value="27">Urban Exploration</option>
-                                    <option value="25">Wedding</option>
+                                    {% for category in categoryList.categories %}
+                                        <option value="{{ category.id }}">{{ category.category_name }}</option>
+                                    {% endfor %}
                                 </select>
                             </div>
 
                             <button type="submit" class="btn btn-default btn-normal">Submit</button>
                             {{ csrf.field | raw }}
                         </form>
-
 
                     </div><!-- end module -->
                 </div><!-- end col -->
