@@ -40,7 +40,7 @@
                         <div class="why-us-right text-left wow fadeInRight" data-wow-duration="1s" data-wow-delay="0.5s">
                             <i class="fa fa-user alignleft"></i>
                             <h4>Client</h4>
-                            <p>Ruben Frankilin</p>
+                            <p>{{ user.name}}</p>
                         </div>
                     </div>
 
@@ -48,7 +48,7 @@
                         <div class="why-us-right text-left wow fadeInRight" data-wow-duration="1s" data-wow-delay="0.9s">
                             <i class="fa fa-magic alignleft"></i>
                             <h4>Category</h4>
-                            <p><a href="#">{{ category.category_name}}</a></p>
+                            <p><a href="{{ path_for('category', {'id': category.id}) }}">{{ category.category_name}}</a></p>
                         </div>
                     </div>
 
@@ -84,53 +84,21 @@
             <div class="row">
                 <div class="col-md-12">
                     <div id="owl-portfolio-related" class="owl-custom">
-                        <div class="owl-single-portfolio-item">
-                            <div class="box entry">
-                                <img src="upload/portfolio_01.jpg" alt="" class="img-responsive">
-                                <div class="magnifier">
-                                    <div class="visible-buttons">
-                                        <h4><a href="portfolio-single-image.html">Booklet branding</a></h4>
-                                        <p>Web Design, Branding</p>
-                                    </div>
-                                </div>
-                            </div><!-- end box -->
-                        </div>
 
-                        <div class="owl-single-portfolio-item">
-                            <div class="box entry">
-                                <img src="upload/portfolio_02.jpg" alt="" class="img-responsive">
-                                <div class="magnifier">
-                                    <div class="visible-buttons">
-                                        <h4><a href="portfolio-single-image.html">Booklet branding</a></h4>
-                                        <p>Web Design, Branding</p>
+                        {% for image_all_in_a_cateogry in images_all_in_a_cateogry %}
+                            <div class="owl-single-portfolio-item">
+                                <div class="box entry">
+                                    <img src="{{ base_url() }}/upload_image/{{ image_all_in_a_cateogry.image_link }}" alt="" class="img-responsive">
+                                    <div class="magnifier">
+                                        <div class="visible-buttons">
+                                            <h4><a href="portfolio-single-image.html">{{ image_all_in_a_cateogry.image_title }}</a></h4>
+                                            <p>Web Design, Branding</p>
+                                        </div>
                                     </div>
-                                </div>
-                            </div><!-- end box -->
-                        </div>
+                                </div><!-- end box -->
+                            </div>
+                        {% endfor %}
 
-                        <div class="owl-single-portfolio-item">
-                            <div class="box entry">
-                                <img src="upload/portfolio_03.jpg" alt="" class="img-responsive">
-                                <div class="magnifier">
-                                    <div class="visible-buttons">
-                                        <h4><a href="portfolio-single-image.html">Booklet branding</a></h4>
-                                        <p>Web Design, Branding</p>
-                                    </div>
-                                </div>
-                            </div><!-- end box -->
-                        </div>
-
-                        <div class="owl-single-portfolio-item">
-                            <div class="box entry">
-                                <img src="upload/portfolio_04.jpg" alt="" class="img-responsive">
-                                <div class="magnifier">
-                                    <div class="visible-buttons">
-                                        <h4><a href="portfolio-single-image.html">Booklet branding</a></h4>
-                                        <p>Web Design, Branding</p>
-                                    </div>
-                                </div>
-                            </div><!-- end box -->
-                        </div>
                     </div><!-- end owl -->
                 </div><!-- end col -->
             </div><!-- end row -->

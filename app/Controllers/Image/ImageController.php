@@ -5,6 +5,7 @@ namespace App\Controllers\Image;
 use App\Controllers\Controller;
 use App\Models\Categorylist;
 use App\Models\Image;
+use App\Models\User;
 
 
 class ImageController extends Controller
@@ -72,11 +73,37 @@ class ImageController extends Controller
     {
         $id =   $args['id'];
         $images = Image::where('id', $id)->first();
-        $category = Categorylist::where('id', $images->image_category)->first();
+
+        $category   = Categorylist::where('id', $images->image_category)->first();
+        $images_all_in_a_cateogry = Image::where('image_category', $images->image_category)->get();
+        $user_name  = User::where('id', $images->user_id)->first();
+
+//        var_dump($images_all_in_a_cateogry);
+//        die();
 
         return $this->view->render($response, 'image/single.twig', [
             'image'     =>  $images,
-            'category'  =>  $category
+            'category'  =>  $category,
+            'user'      =>  $user_name,
+            'images_all_in_a_cateogry'  =>  $images_all_in_a_cateogry
+        ]);
+    }
+
+    public function getAllImageInACategory($request, $response, $args)
+    {
+        $id     = $args['id'];
+        $image  = new Image;
+        $images = $image->getAllImage($id);
+        // echo "<pre>";
+        //   foreach($images as $my_image){
+        //     echo $my_image->id." ".$my_image->name;
+        //     echo "<br>";
+        //   }
+        // echo "</pre>";
+        // die();
+
+        return $this->view->render($response, 'image/category.twig', [
+            'images'     =>  $images
         ]);
     }
 }

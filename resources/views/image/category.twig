@@ -1,0 +1,48 @@
+{% extends 'templates/app.twig' %}
+
+{% block content %}
+    <section class="section white border-top nopaddingbottom2">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="custom-title text-center wow fadeIn">
+                        <h2>Our
+                            <mark>Portfolio</mark>
+                        </h2>
+                    </div><!-- end custom-title -->
+                </div><!-- end col -->
+            </div><!-- end row -->
+
+            <div class="text-center clearfix">
+                <nav class="portfolio-filter">
+                    <ul class="list-inline">
+                        <li><a href="#" data-filter="*" class="active">All Works</a></li>
+                        <li><a href="#" data-filter=".cat1">BRANDING</a></li>
+                        <li><a href="#" data-filter=".cat2">GRAPHIC</a></li>
+                        <li><a href="#" data-filter=".cat3">WEB DESIGN</a></li>
+                        <li><a href="#" data-filter=".cat4">PHOTOGRAPHY</a></li>
+                    </ul>
+                </nav>
+            </div><!-- end text-center -->
+        </div><!-- end container -->
+
+        <div class="container-full">
+            <div id="gallery" class="row">
+                <div id="fourcol" class="portfolio">
+                    {% for image in images %}
+                        <div class="box entry item-w1 item-h1 cat1">
+                            <img src="{{ base_url() }}/upload_image/{{ image.image_link }}" alt="" class="img-responsive">
+                            <div class="magnifier">
+                                <div class="visible-buttons">
+                                    <h4><a href="{{ path_for('singleimage', {'id': image.id}) }}">{{ image.image_title }}</a></h4>
+                                    <p>{{ image.image_description }}</p>
+                                </div>
+                            </div>
+                        </div><!-- end box -->
+                    {% endfor %}
+
+                </div><!-- end portfolio -->
+            </div><!-- end gallery -->
+        </div><!-- end container-fluid -->
+    </section><!-- end section -->
+{% endblock %}

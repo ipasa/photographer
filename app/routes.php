@@ -8,6 +8,7 @@ $app->get('/image/upload', 'ImageController:getUpload')->setName('image.upload')
 $app->post('/image/upload', 'ImageController:postUpload');
 
 $app->get('/image/single/{id}', 'ImageController:getSingleImage')->setName('singleimage');
+$app->get('/image/category/{id}', 'ImageController:getAllImageInACategory')->setName('category');
 
 /**
  * Guest Middleware
