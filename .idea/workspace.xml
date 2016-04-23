@@ -2,14 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="54159366-e550-435e-9359-cf567c2a9229" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/views/image/category.twig" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Controllers/Image/ImageController.php" afterPath="$PROJECT_DIR$/app/Controllers/Image/ImageController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Middleware/OldInputMiddleware.php" afterPath="$PROJECT_DIR$/app/Middleware/OldInputMiddleware.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Models/Image.php" afterPath="$PROJECT_DIR$/app/Models/Image.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/routes.php" afterPath="$PROJECT_DIR$/app/routes.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/css/custom.css" afterPath="$PROJECT_DIR$/public/css/custom.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/image/single.twig" afterPath="$PROJECT_DIR$/resources/views/image/single.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/templates/partials/navigation.twig" afterPath="$PROJECT_DIR$/resources/views/templates/partials/navigation.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/templates/app.twig" afterPath="$PROJECT_DIR$/resources/views/templates/app.twig" />
     </list>
     <ignored path="authentication.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -31,6 +28,13 @@
   </component>
   <component name="FileEditorManager">
     <leaf />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="HTML File" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -60,10 +64,8 @@
         <option value="$PROJECT_DIR$/app/Middleware/AuthMiddleware.php" />
         <option value="$PROJECT_DIR$/resources/views/templates/partials/flash-message.twig" />
         <option value="$PROJECT_DIR$/app/Middleware/GuestMiddleware.php" />
-        <option value="$PROJECT_DIR$/resources/views/templates/app.twig" />
         <option value="$PROJECT_DIR$/resources/views/auth/signup.twig" />
         <option value="$PROJECT_DIR$/resources/views/auth/signin.twig" />
-        <option value="$PROJECT_DIR$/public/css/custom.css" />
         <option value="$PROJECT_DIR$/app/Controllers/HomeController.php" />
         <option value="$PROJECT_DIR$/public/css/style.css" />
         <option value="$PROJECT_DIR$/resources/views/home.twig" />
@@ -78,6 +80,10 @@
         <option value="$PROJECT_DIR$/app/Middleware/OldInputMiddleware.php" />
         <option value="$PROJECT_DIR$/app/Models/Image.php" />
         <option value="$PROJECT_DIR$/app/Controllers/Image/ImageController.php" />
+        <option value="$PROJECT_DIR$/public/css/test.html" />
+        <option value="$USER_HOME$/Desktop/test.html" />
+        <option value="$PROJECT_DIR$/public/css/custom.css" />
+        <option value="$PROJECT_DIR$/resources/views/templates/app.twig" />
         <option value="$PROJECT_DIR$/resources/views/image/single.twig" />
       </list>
     </option>
@@ -122,6 +128,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -143,15 +150,15 @@
         </subPane>
       </pane>
       <pane id="Scratches" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="SearchEverywhereHistoryKey" value="sin&#9;FILE&#9;file://C:/xampp/htdocs/authentication/resources/views/image/single.twig&#10;navi&#9;FILE&#9;file://C:/xampp/htdocs/authentication/resources/views/templates/partials/navigation.twig&#10;upl&#9;FILE&#9;file://C:/xampp/htdocs/authentication/resources/views/image/upload.twig&#10;ROUTE&#9;FILE&#9;file://C:/xampp/htdocs/authentication/app/routes.php&#10;st&#9;FILE&#9;file://C:/xampp/htdocs/authentication/public/css/style.css&#10;app&#9;FILE&#9;file://C:/xampp/htdocs/authentication/bootstrap/app.php&#10;home&#9;FILE&#9;file://C:/xampp/htdocs/authentication/resources/views/home.twig&#10;routes&#9;FILE&#9;file://C:/xampp/htdocs/authentication/app/routes.php&#10;route&#9;FILE&#9;file://C:/xampp/htdocs/authentication/app/routes.php&#10;style&#9;FILE&#9;file://C:/xampp/htdocs/authentication/public/css/style.css&#10;chan&#9;FILE&#9;file://C:/xampp/htdocs/authentication/resources/views/auth/password/change.twig&#10;sign&#9;FILE&#9;file://C:/xampp/htdocs/authentication/resources/views/auth/signin.twig&#10;cs&#9;FILE&#9;file://C:/xampp/htdocs/authentication/public/css/style.css&#10;nested&#9;null&#9;null" />
+    <property name="SearchEverywhereHistoryKey" value="custo&#9;FILE&#9;file://C:/xampp/htdocs/authentication/public/css/custom.css&#10;si&#9;FILE&#9;file://C:/xampp/htdocs/authentication/resources/views/image/single.twig&#10;cus&#9;FILE&#9;file://C:/xampp/htdocs/authentication/public/css/custom.css&#10;style&#9;FILE&#9;file://C:/xampp/htdocs/authentication/public/css/style.css&#10;single&#9;FILE&#9;file://C:/xampp/htdocs/authentication/resources/views/image/single.twig&#10;sin&#9;FILE&#9;file://C:/xampp/htdocs/authentication/resources/views/image/single.twig&#10;navi&#9;FILE&#9;file://C:/xampp/htdocs/authentication/resources/views/templates/partials/navigation.twig&#10;upl&#9;FILE&#9;file://C:/xampp/htdocs/authentication/resources/views/image/upload.twig&#10;ROUTE&#9;FILE&#9;file://C:/xampp/htdocs/authentication/app/routes.php&#10;st&#9;FILE&#9;file://C:/xampp/htdocs/authentication/public/css/style.css&#10;app&#9;FILE&#9;file://C:/xampp/htdocs/authentication/bootstrap/app.php&#10;home&#9;FILE&#9;file://C:/xampp/htdocs/authentication/resources/views/home.twig&#10;routes&#9;FILE&#9;file://C:/xampp/htdocs/authentication/app/routes.php&#10;route&#9;FILE&#9;file://C:/xampp/htdocs/authentication/app/routes.php&#10;chan&#9;FILE&#9;file://C:/xampp/htdocs/authentication/resources/views/auth/password/change.twig&#10;sign&#9;FILE&#9;file://C:/xampp/htdocs/authentication/resources/views/auth/signin.twig&#10;cs&#9;FILE&#9;file://C:/xampp/htdocs/authentication/public/css/style.css&#10;nested&#9;null&#9;null" />
     <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.Font" />
     <property name="settings.editor.splitter.proportion" value="0.31906077" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -220,18 +227,21 @@
       <workItem from="1461361115786" duration="1504000" />
       <workItem from="1461365105153" duration="1605000" />
       <workItem from="1461423168873" duration="1199000" />
-      <workItem from="1461427616966" duration="1902000" />
+      <workItem from="1461427616966" duration="2501000" />
+      <workItem from="1461436810880" duration="132000" />
+      <workItem from="1461437512949" duration="6065000" />
+      <workItem from="1461444325496" duration="649000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="69895000" />
+    <option name="totallyTimeSpent" value="77340000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="22" width="1382" height="754" extended-state="6" />
     <editor active="false" />
     <layout>
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17862372" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19765739" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -268,27 +278,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/resources/views/auth/signin.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="8" column="21" selection-start-line="8" selection-start-column="21" selection-end-line="8" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/routes.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="10" column="24" selection-start-line="10" selection-start-column="24" selection-end-line="10" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/templates/partials/navigation.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="504">
-          <caret line="28" column="66" selection-start-line="28" selection-start-column="66" selection-end-line="28" selection-end-column="66" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Controllers/Auth/AuthController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="306">
@@ -457,27 +446,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/css/custom.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="18">
-          <caret line="1" column="34" selection-start-line="1" selection-start-column="34" selection-end-line="1" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/templates/app.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="65" column="51" selection-start-line="65" selection-start-column="51" selection-end-line="65" selection-end-column="51" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/css/style.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="1119" column="22" selection-start-line="1119" selection-start-column="22" selection-end-line="1119" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/Downloads/Compressed/Template/ultron/portfolio-single-image.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="270">
@@ -573,7 +541,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
           <caret line="10" column="97" selection-start-line="10" selection-start-column="97" selection-end-line="10" selection-end-column="97" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -581,15 +548,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="5274">
           <caret line="293" column="10" selection-start-line="293" selection-start-column="10" selection-end-line="293" selection-end-column="10" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/image/category.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="604">
-          <caret line="47" column="14" selection-start-line="47" selection-start-column="14" selection-end-line="47" selection-end-column="14" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -597,7 +555,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="216">
           <caret line="12" column="25" selection-start-line="12" selection-start-column="25" selection-end-line="12" selection-end-column="25" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -605,15 +562,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="108">
           <caret line="6" column="24" selection-start-line="6" selection-start-column="19" selection-end-line="6" selection-end-column="24" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/image/single.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="212">
-          <caret line="90" column="102" selection-start-line="90" selection-start-column="102" selection-end-line="90" selection-end-column="102" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -621,23 +569,65 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
           <caret line="5" column="46" selection-start-line="5" selection-start-column="46" selection-end-line="5" selection-end-column="46" />
-          <folding>
-            <element signature="e#30#69#0#PHP" expanded="true" />
-            <marker date="1461428904876" expanded="true" signature="587:712" placeholder="SELECT image... images" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Controllers/Image/ImageController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="478">
-          <caret line="87" column="37" selection-start-line="87" selection-start-column="13" selection-end-line="87" selection-end-column="37" />
-          <folding>
-            <element signature="e#41#72#0#PHP" expanded="true" />
-            <element signature="e#194#320#0#PHP" expanded="false" />
-            <element signature="e#326#2409#0#PHP" expanded="false" />
-            <element signature="e#788#1186#1#PHP" expanded="false" />
-          </folding>
+        <state relative-caret-position="468">
+          <caret line="90" column="28" selection-start-line="90" selection-start-column="13" selection-end-line="90" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../image_exif_read/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="8" column="67" selection-start-line="8" selection-start-column="52" selection-end-line="8" selection-end-column="67" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/css/test.html" />
+    <entry file="file://$USER_HOME$/Desktop/test.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/css/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="1119" column="22" selection-start-line="1119" selection-start-column="22" selection-end-line="1119" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/css/custom.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="5" column="26" selection-start-line="5" selection-start-column="26" selection-end-line="5" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/image/category.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="712">
+          <caret line="47" column="14" selection-start-line="47" selection-start-column="14" selection-end-line="47" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/image/single.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="26" column="116" selection-start-line="26" selection-start-column="116" selection-end-line="26" selection-end-column="116" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/templates/app.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="604">
+          <caret line="182" column="9" selection-start-line="182" selection-start-column="9" selection-end-line="182" selection-end-column="9" />
+          <folding />
         </state>
       </provider>
     </entry>

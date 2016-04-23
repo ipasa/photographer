@@ -31,6 +31,9 @@
     <link rel="stylesheet" type="text/css" href="{{ base_url() }}/rs-plugin/css/settings.css" media="screen"/>
     <link rel="stylesheet" type="text/css" href="{{ base_url() }}/css/style.css">
 
+    <!-- Magnific Popup core CSS file -->
+    <link rel="stylesheet" href="{{ base_url() }}/css/magnific-popup.css">
+
     <!-- COLORS -->
     <link rel="stylesheet" type="text/css" href="{{ base_url() }}/css/custom.css">
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
@@ -97,6 +100,9 @@
 <!-- SLIDER REV -->
 <script src="{{ base_url() }}/rs-plugin/js/jquery.themepunch.tools.min.js"></script>
 <script src="{{ base_url() }}/rs-plugin/js/jquery.themepunch.revolution.min.js"></script>
+
+<!-- Magnific Popup core JS file -->
+<script src="{{ base_url() }}/js/jquery.magnific-popup.min.js"></script>
 <script>
     jQuery(document).ready(function () {
         jQuery('.tp-banner').show().revolution(
@@ -155,6 +161,24 @@
                     startWithSlide: 0,
                     fullScreenOffsetContainer: ""
                 });
+    });
+</script>
+<script>
+    $(document).ready(function() {
+        $('.image-popup-no-margins').magnificPopup({
+            type: 'image',
+            closeOnContentClick: true,
+            closeBtnInside: false,
+            fixedContentPos: true,
+            mainClass: 'mfp-no-margins mfp-with-zoom', // class to remove default margin from left and right side
+            image: {
+                verticalFit: true
+            },
+            zoom: {
+                enabled: true,
+                duration: 300 // don't foget to change the duration also in CSS
+            }
+        });
     });
 </script>
 

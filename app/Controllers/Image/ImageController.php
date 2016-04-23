@@ -78,14 +78,17 @@ class ImageController extends Controller
         $images_all_in_a_cateogry = Image::where('image_category', $images->image_category)->get();
         $user_name  = User::where('id', $images->user_id)->first();
 
-//        var_dump($images_all_in_a_cateogry);
-//        die();
+        $image_link =   $images->image_link;
+        $image_link =   'http://localhost/authentication/public/upload_image/'.$image_link;
+
+        $info = exif_read_data($image_link);
 
         return $this->view->render($response, 'image/single.twig', [
             'image'     =>  $images,
             'category'  =>  $category,
             'user'      =>  $user_name,
-            'images_all_in_a_cateogry'  =>  $images_all_in_a_cateogry
+            'images_all_in_a_cateogry'  =>  $images_all_in_a_cateogry,
+            'image_link_exif'           =>  $info
         ]);
     }
 

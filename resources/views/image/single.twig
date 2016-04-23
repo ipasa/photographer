@@ -22,9 +22,13 @@
         <div class="container">
 
             <div class="row">
-                <div class="col-md-8">
+                <div class="col-md-8 image-hover">
                     <div class="owl-single-portfolio-item">
-                        <img src="{{ base_url() }}/upload_image/{{ image.image_link }}" alt="" class="img-responsive">
+                        <a class="image-popup-no-margins" href="{{ base_url() }}/upload_image/{{ image.image_link }}">
+                            <img src="{{ base_url() }}/upload_image/{{ image.image_link }}" alt=""
+                                 class="img-responsive">
+                        </a>
+                        <button type="button" class="btn btn-primary btn-normal btn-lg no-padding alignright"><i class="icon icon-heart"></i></button>
                     </div>
                 </div><!-- end col -->
 
@@ -37,10 +41,10 @@
                     </p>
 
                     <div class="contact-details portfolio-details">
-                        <div class="why-us-right text-left wow fadeInRight" data-wow-duration="1s" data-wow-delay="0.5s">
-                            <i class="fa fa-user alignleft"></i>
-                            <h4>Client</h4>
-                            <p>{{ user.name}}</p>
+                        <div class="why-us-right text-left wow fadeInRight" data-wow-duration="1s" data-wow-delay="0.9s">
+                            <h4>{{ user.name }}</h4>
+                            <button type="button" class="btn btn-default btn-sm btn-normal">Follow</button>
+                            <br><br>
                         </div>
                     </div>
 
@@ -51,6 +55,20 @@
                             <p><a href="{{ path_for('category', {'id': category.id}) }}">{{ category.category_name}}</a></p>
                         </div>
                     </div>
+
+                    {% if image_link_exif.Model  %}
+                        <div class="contact-details portfolio-details">
+                            <div class="why-us-right text-left wow fadeInRight" data-wow-duration="1s" data-wow-delay="0.9s">
+                                <h4>Info</h4>
+                                <h5>Camera Model - {{ image_link_exif.Model }}</h5>
+                                <p>
+                                    ISO - {{ image_link_exif.ISOSpeedRatings }}<br>
+                                    Aperture - {{ image_link_exif.COMPUTED.ApertureFNumber }}<br>
+                                    Shatter Speed - {{ image_link_exif.ExposureTime }}
+                                </p>
+                            </div>
+                        </div>
+                    {% endif %}
 
                     <div class="contact-details portfolio-details">
                         <div class="why-us-right text-left wow fadeInRight" data-wow-duration="1s" data-wow-delay="1.3s">
@@ -91,7 +109,11 @@
                                     <img src="{{ base_url() }}/upload_image/{{ image_all_in_a_cateogry.image_link }}" alt="" class="img-responsive">
                                     <div class="magnifier">
                                         <div class="visible-buttons">
-                                            <h4><a href="portfolio-single-image.html">{{ image_all_in_a_cateogry.image_title }}</a></h4>
+                                            <h4>
+                                                <a href="{{ path_for('singleimage', {'id': image_all_in_a_cateogry.id}) }}">
+                                                    {{ image_all_in_a_cateogry.image_title }}
+                                                </a>
+                                            </h4>
                                             <p>Web Design, Branding</p>
                                         </div>
                                     </div>
@@ -104,5 +126,4 @@
             </div><!-- end row -->
         </div><!-- end container -->
     </section>
-
 {% endblock %}
