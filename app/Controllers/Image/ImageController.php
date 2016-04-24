@@ -4,8 +4,10 @@ namespace App\Controllers\Image;
 
 use App\Controllers\Controller;
 use App\Models\Categorylist;
+use App\Models\Favorite;
 use App\Models\Image;
 use App\Models\User;
+use Illuminate\Database\Capsule\Manager as DB;
 
 
 class ImageController extends Controller
@@ -52,11 +54,15 @@ class ImageController extends Controller
             // Success!
             $file->upload();
             $new_filename   =   $new_filename.'.'.$file->getExtension();
+
+            $user_id    =   $_SESSION['user'];
+
             $image   =   Image::create([
                 'image_title'       =>  $request->getParam('image_title'),
                 'image_description' =>  $request->getParam('image_description'),
                 'image_link'        =>  $new_filename,
                 'image_category'    =>  $request->getParam('image_category'),
+                'user_id'           =>  $user_id,
             ]);
 
             $this->flash->addMessage('success', 'You have been Signed Up Successfully');
@@ -72,6 +78,14 @@ class ImageController extends Controller
     public function getSingleImage($request, $response, $args)
     {
         $id =   $args['id'];
+
+        $user_id    =   $_SESSION['user'];
+        $favorited  =   Favorite::where('user_id', $user_id)->lists('image_id');
+        foreach ($favorited as $favorite)
+            $data[] =   $favorite;
+
+        $favorited  =   in_array($id, $data);
+
         $images = Image::where('id', $id)->first();
 
         $category   = Categorylist::where('id', $images->image_category)->first();
@@ -88,7 +102,8 @@ class ImageController extends Controller
             'category'  =>  $category,
             'user'      =>  $user_name,
             'images_all_in_a_cateogry'  =>  $images_all_in_a_cateogry,
-            'image_link_exif'           =>  $info
+            'image_link_exif'           =>  $info,
+            'favorateOrNot' =>  $favorited
         ]);
     }
 
@@ -108,5 +123,27 @@ class ImageController extends Controller
         return $this->view->render($response, 'image/category.twig', [
             'images'     =>  $images
         ]);
+    }
+
+    public function favoriteImage($request, $response, $args){
+        $image_id   =   $request->getParam('image_id');
+
+        $favorite   = Favorite::create([
+            'user_id'      =>  $request->getParam('user_id'),
+            'image_id'     =>  $request->getParam('image_id'),
+        ]);
+        if (!$favorite){
+            return 'Sorry';
+        }
+        return $response->withRedirect($this->router->pathFor('singleimage', ['id' => $image_id] ));
+
+    }
+
+    public function destroyFavoriteImage($request, $response, $args){
+        $user_id    =   $_SESSION['user'];
+        $image_id   =   $request->getParam('image_id');
+
+        $query = DB::select(DB::raw('DELETE FROM favorites WHERE user_id='.$user_id.' AND image_id='.$image_id));
+        return $response->withRedirect($this->router->pathFor('singleimage', ['id' => $image_id] ));
     }
 }

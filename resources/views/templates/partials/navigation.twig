@@ -141,14 +141,14 @@
                                         <div class="row">
                                             <div class="col-sm-6 col-sm-6">
                                                 <ul>
-                                                    {% for category in categoryList.categories|slice(1, 13) %}
+                                                    {% for category in categoryList.categories|slice(0, 13) %}
                                                         <li><a href="{{ path_for('category', {'id': category.id}) }}">{{ category.category_name }}</a></li>
                                                     {% endfor %}
                                                 </ul>
                                             </div><!-- end col -->
                                             <div class="col-sm-6 col-sm-6">
                                                 <ul>
-                                                    {% for category in categoryList.categories|slice(14, 25) %}
+                                                    {% for category in categoryList.categories|slice(14, 26) %}
                                                         <li><a href="{{ category.id }}">{{ category.category_name }}</a></li>
                                                     {% endfor %}
                                                 </ul>

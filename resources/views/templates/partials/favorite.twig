@@ -1,0 +1,13 @@
+{% if favorateOrNot %}
+    <form action="{{ path_for('favorites.destroy') }}" method="post">
+{% else %}
+    <form action="{{ path_for('favorites.store') }}" method="post">
+{% endif %}
+        <input type="hidden" name="image_id" value="{{ image.id }}">
+        <input type="hidden" name="user_id" value="{{ auth.user.id }}">
+        <button type="submit"
+                class="btn btn-primary btn-normal btn-lg no-padding alignright{{ favorateOrNot ? ' favorited' : '' }}">
+            <i class="fa fa-heart" aria-hidden="true"></i>
+        </button>
+        {{ csrf.field | raw }}
+    </form>

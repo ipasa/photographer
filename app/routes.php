@@ -10,6 +10,9 @@ $app->post('/image/upload', 'ImageController:postUpload');
 $app->get('/image/single/{id}', 'ImageController:getSingleImage')->setName('singleimage');
 $app->get('/image/category/{id}', 'ImageController:getAllImageInACategory')->setName('category');
 
+$app->post('/favorites/store', 'ImageController:favoriteImage')->setName('favorites.store');
+$app->post('/favorites/destroy', 'ImageController:destroyFavoriteImage')->setName('favorites.destroy');
+
 /**
  * Guest Middleware
  */

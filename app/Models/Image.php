@@ -7,7 +7,7 @@ use Illuminate\Database\Capsule\Manager as DB;
 
 class Image extends Model{
     protected $fillable =   [
-        'image_title', 'image_description', 'image_link', 'image_category'
+        'image_title', 'image_description', 'image_link', 'image_category', 'user_id'
     ];
 
 

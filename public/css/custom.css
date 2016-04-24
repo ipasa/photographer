@@ -3,5 +3,7 @@ h4{
 }
 .no-padding{
     padding: 10px 20px!important;
+}
+.favorited{
     background-color: red;
 }
