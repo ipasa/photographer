@@ -9,7 +9,7 @@ class HomeController extends Controller
 {
     public function index($request, $response, $args)
     {
-        //ata   =   Image::all();
+        //$data   =   Image::all();
         $data   =   DB::select(DB::raw('SELECT images.*, categorylists.category_name FROM images,categorylists WHERE images.image_category=categorylists.id'));                              
         return $this->view->render($response, 'home.twig', [
             'images' => $data
