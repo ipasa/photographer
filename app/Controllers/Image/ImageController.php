@@ -87,6 +87,12 @@ class ImageController extends Controller
         $favorited  =   in_array($id, $data);
 
         $images = Image::where('id', $id)->first();
+        $image_view_count = $images->view_counter;
+        $image_view_count++;
+
+        $images->view_counter = $image_view_count;
+        $images->save();
+      
 
         $category   = Categorylist::where('id', $images->image_category)->first();
         $images_all_in_a_cateogry = Image::where('image_category', $images->image_category)->get();
