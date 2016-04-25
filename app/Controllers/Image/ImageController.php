@@ -93,7 +93,8 @@ class ImageController extends Controller
         $user_name  = User::where('id', $images->user_id)->first();
 
         $image_link =   $images->image_link;
-        $image_link =   'http://localhost/authentication/public/upload_image/'.$image_link;
+        //$image_link =   'http://:'.$_SERVER['SERVER_NAME'].'/public/upload_image/'.$image_link;
+        $image_link = 'http://preview.5phsk37zjxxbt9c41ny7my0p0kke29txf5tq06k1l15rk9.box.codeanywhere.com/public/upload_image/'.$image_link;
 
         $info = exif_read_data($image_link);
 
@@ -112,6 +113,7 @@ class ImageController extends Controller
         $id     = $args['id'];
         $image  = new Image;
         $images = $image->getAllImage($id);
+        $category_name  = Categorylist::find($id);
         // echo "<pre>";
         //   foreach($images as $my_image){
         //     echo $my_image->id." ".$my_image->name;
@@ -121,7 +123,8 @@ class ImageController extends Controller
         // die();
 
         return $this->view->render($response, 'image/category.twig', [
-            'images'     =>  $images
+            'images'         =>  $images,
+            'category_name'  =>  $category_name
         ]);
     }
 

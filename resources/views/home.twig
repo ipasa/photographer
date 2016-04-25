@@ -10,9 +10,10 @@
         <div class="tp-banner-container">
             <div class="tp-banner">
                 <ul>
+                  {% for image in images |slice(0, 4) %}
                     <li data-transition="fade" data-slotamount="1" data-masterspeed="500"
                         data-thumb="upload/slider_19.jpg" data-saveperformance="off" data-title="Slide">
-                        <img src="upload/slider_19.jpg" alt="fullslide1" data-bgposition="center top" data-bgfit="cover"
+                        <img src="upload_image/{{ image.image_link }}" alt="fullslide1" data-bgposition="center top" data-bgfit="cover"
                              data-bgrepeat="no-repeat">
                         <div class="tp-caption slider_layer_03 lft tp-resizeme rs-parallaxlevel-9"
                              data-x="left"
@@ -25,8 +26,7 @@
                              data-elementdelay="0.1"
                              data-endelementdelay="0.1"
                              data-endspeed="1000"
-                             style="z-index: 9; max-width: auto; max-height: auto; white-space: nowrap;">Ultron Vois
-                            Watches
+                             style="z-index: 9; max-width: auto; max-height: auto; white-space: nowrap;">{{ image.image_title }}
                             <hr>
                         </div>
                         <div class="tp-caption slider_layer_04 lfb rs-parallaxlevel-10"
@@ -40,77 +40,10 @@
                              data-elementdelay="0.1"
                              data-endelementdelay="0.1"
                              data-endspeed="1000"
-                             style="z-index: 9; max-width: auto; max-height: auto; white-space: nowrap;">Branding, Web
-                            Design
+                             style="z-index: 9; max-width: auto; max-height: auto; white-space: nowrap;">{{ image.category_name }}
                         </div>
                     </li>
-                    <li data-transition="fade" data-slotamount="1" data-masterspeed="500"
-                        data-thumb="upload/slider_20.jpg" data-saveperformance="off" data-title="Slide">
-                        <img src="upload/slider_20.jpg" alt="fullslide1" data-bgposition="center top" data-bgfit="cover"
-                             data-bgrepeat="no-repeat">
-                        <div class="tp-caption slider_layer_03 lft tp-resizeme rs-parallaxlevel-9"
-                             data-x="left"
-                             data-y="450"
-                             data-speed="1000"
-                             data-start="1200"
-                             data-easing="Power3.easeInOut"
-                             data-splitin="none"
-                             data-splitout="none"
-                             data-elementdelay="0.1"
-                             data-endelementdelay="0.1"
-                             data-endspeed="1000"
-                             style="z-index: 9; max-width: auto; max-height: auto; white-space: nowrap;">Ultron Branding
-                            <hr>
-                        </div>
-                        <div class="tp-caption slider_layer_04 lfb rs-parallaxlevel-10"
-                             data-x="left"
-                             data-y="520"
-                             data-speed="1000"
-                             data-start="1500"
-                             data-easing="Power3.easeInOut"
-                             data-splitin="none"
-                             data-splitout="none"
-                             data-elementdelay="0.1"
-                             data-endelementdelay="0.1"
-                             data-endspeed="1000"
-                             style="z-index: 9; max-width: auto; max-height: auto; white-space: nowrap;">Branding, Web
-                            Design
-                        </div>
-                    </li>
-                    <li data-transition="fade" data-slotamount="1" data-masterspeed="500"
-                        data-thumb="upload/slider_21.jpg" data-saveperformance="off" data-title="Slide">
-                        <img src="upload/slider_21.jpg" alt="fullslide1" data-bgposition="center top" data-bgfit="cover"
-                             data-bgrepeat="no-repeat">
-                        <div class="tp-caption slider_layer_03 lft tp-resizeme rs-parallaxlevel-9"
-                             data-x="left"
-                             data-y="450"
-                             data-speed="1000"
-                             data-start="1200"
-                             data-easing="Power3.easeInOut"
-                             data-splitin="none"
-                             data-splitout="none"
-                             data-elementdelay="0.1"
-                             data-endelementdelay="0.1"
-                             data-endspeed="1000"
-                             style="z-index: 9; max-width: auto; max-height: auto; white-space: nowrap;">Ultron Mac
-                            Mockup
-                            <hr>
-                        </div>
-                        <div class="tp-caption slider_layer_04 lfb rs-parallaxlevel-10"
-                             data-x="left"
-                             data-y="520"
-                             data-speed="1000"
-                             data-start="1500"
-                             data-easing="Power3.easeInOut"
-                             data-splitin="none"
-                             data-splitout="none"
-                             data-elementdelay="0.1"
-                             data-endelementdelay="0.1"
-                             data-endspeed="1000"
-                             style="z-index: 9; max-width: auto; max-height: auto; white-space: nowrap;">Branding, Web
-                            Design
-                        </div>
-                    </li>
+                  {% endfor %}
                 </ul>
             </div>
         </div>
