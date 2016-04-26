@@ -32,7 +32,7 @@
                         {% if auth.check %}
                             {% include 'templates/partials/favorite.twig' %}
                         {% else %}
-                            <a href="">
+                            <a href="{{ path_for('auth.signin') }}">
                                 <button type="button" class="btn btn-primary btn-normal btn-lg no-padding alignright">
                                     To Love <i class="fa fa-heart" aria-hidden="true"></i> this image, Please Login
                                 </button>
@@ -52,7 +52,23 @@
                     <div class="contact-details portfolio-details">
                         <div class="why-us-right text-left wow fadeInRight" data-wow-duration="1s" data-wow-delay="0.9s">
                             <h4>{{ user.name }}</h4>
-                            <button type="button" class="btn btn-default btn-sm btn-normal">Follow</button>
+
+                            {% if auth.user %}
+                                {% if auth.user.id==user.id %}
+
+                                {% else %}
+                                    <form action="{{ path_for('follow.store') }}" method="post">
+                                        <input type="hidden" name="follower_id" value="{{ auth.user.id }}">
+                                        <input type="hidden" name="followed_id" value="{{ user.id }}">
+                                        <button type="submit" class="btn btn-default btn-sm btn-normal">Follow</button>
+                                        {{ csrf.field | raw }}
+                                    </form>
+                                {% endif %}
+                            {% else %}
+                                <a href="{{ path_for('auth.signin') }}">
+                                    <button type="submit" class="btn btn-default btn-sm btn-normal">Pls login to Follow</button>
+                                </a>
+                            {% endif %}
                             <br><br>
                         </div>
                     </div>
@@ -61,7 +77,11 @@
                         <div class="why-us-right text-left wow fadeInRight" data-wow-duration="1s" data-wow-delay="0.9s">
                             <i class="fa fa-magic alignleft"></i>
                             <h4>Category</h4>
-                            <p><a href="{{ path_for('category', {'id': category.id}) }}">{{ category.category_name}}</a></p>
+                            <p>
+                                <a href="{{ path_for('category', {'id': category.id}) }}">
+                                    {{ category.category_name}}
+                                </a>
+                            </p>
                         </div>
                     </div>
                     
@@ -81,9 +101,22 @@
 
                     <div class="contact-details portfolio-details">
                         <div class="why-us-right text-left wow fadeInRight" data-wow-duration="1s" data-wow-delay="1.3s">
-                            <i class="fa fa-calendar alignleft"></i>
-                            <h4>Date</h4>
-                            <p>{{ image.created_at }}</p>
+                            <h4 class="text-center"></h4>
+                            <div class="col-md-4">
+                                <h3 class="text-center less-bottom">Pulse</h3>
+                                <p class="text-center less-top">98.9</p>
+                            </div>
+
+                            <div class="col-md-4">
+                                <h3 class="text-center less-bottom">Views</h3>
+                                <p class="text-center">{{ image.view_counter }}</p>
+                            </div>
+
+                            <div class="col-md-4">
+                                <h3 class="text-center less-bottom">Frash</h3>
+                            </div>
+                            <p class="text-center">{{ image.updated_at }}</p>
+
                         </div>
                     </div>
 

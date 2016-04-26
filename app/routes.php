@@ -13,6 +13,9 @@ $app->get('/image/category/{id}', 'ImageController:getAllImageInACategory')->set
 $app->post('/favorites/store', 'ImageController:favoriteImage')->setName('favorites.store');
 $app->post('/favorites/destroy', 'ImageController:destroyFavoriteImage')->setName('favorites.destroy');
 
+$app->post('/user/follow', 'FollowController:followUser')->setName('follow.store');
+$app->post('/user/unfollow', 'FollowController:unFollowUser')->setName('follow.destroy');
+
 /**
  * Guest Middleware
  */

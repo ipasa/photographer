@@ -7,3 +7,7 @@ h4{
 .favorited{
     background-color: red;
 }
+h3.text-center.less-bottom {
+    padding-bottom: 0px;
+    margin-bottom: 2px;
+}

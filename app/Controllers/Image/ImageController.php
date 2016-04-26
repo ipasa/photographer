@@ -99,8 +99,8 @@ class ImageController extends Controller
         $user_name  = User::where('id', $images->user_id)->first();
 
         $image_link =   $images->image_link;
-        //$image_link =   'http://localhost/authentication/public/upload_image/'.$image_link;
-        $image_link = 'http://preview.5phsk37zjxxbt9c41ny7my0p0kke29txf5tq06k1l15rk9.box.codeanywhere.com/public/upload_image/'.$image_link;
+        $image_link =   'http://localhost/authentication/public/upload_image/'.$image_link;
+        //$image_link = 'http://preview.5phsk37zjxxbt9c41ny7my0p0kke29txf5tq06k1l15rk9.box.codeanywhere.com/public/upload_image/'.$image_link;
 
         $info = exif_read_data($image_link);
 
@@ -137,6 +137,13 @@ class ImageController extends Controller
     public function favoriteImage($request, $response, $args){
         $image_id   =   $request->getParam('image_id');
 
+        $images = Image::where('id', $image_id)->first();
+        $image_rating_count =   $images->rating_counter;
+        $image_rating_count =   $image_rating_count+5;
+
+        $images->rating_counter = $image_rating_count;
+        $images->save();
+
         $favorite   = Favorite::create([
             'user_id'      =>  $request->getParam('user_id'),
             'image_id'     =>  $request->getParam('image_id'),
@@ -151,6 +158,13 @@ class ImageController extends Controller
     public function destroyFavoriteImage($request, $response, $args){
         $user_id    =   $_SESSION['user'];
         $image_id   =   $request->getParam('image_id');
+
+        $images = Image::where('id', $image_id)->first();
+        $image_rating_count =   $images->rating_counter;
+        $image_rating_count =   $image_rating_count-5;
+
+        $images->rating_counter = $image_rating_count;
+        $images->save();
 
         $query = DB::select(DB::raw('DELETE FROM favorites WHERE user_id='.$user_id.' AND image_id='.$image_id));
         return $response->withRedirect($this->router->pathFor('singleimage', ['id' => $image_id] ));
