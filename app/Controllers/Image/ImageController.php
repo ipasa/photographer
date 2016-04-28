@@ -92,7 +92,6 @@ class ImageController extends Controller
 
         $images->view_counter = $image_view_count;
         $images->save();
-      
 
         $category   = Categorylist::where('id', $images->image_category)->first();
         $images_all_in_a_cateogry = Image::where('image_category', $images->image_category)->get();
@@ -103,6 +102,20 @@ class ImageController extends Controller
         //$image_link = 'http://preview.5phsk37zjxxbt9c41ny7my0p0kke29txf5tq06k1l15rk9.box.codeanywhere.com/public/upload_image/'.$image_link;
 
         $info = exif_read_data($image_link);
+        $image_rating   =   $images->rating_counter;
+
+        $pulse_counter  =   ($image_rating*100)/$image_view_count;
+        $pulse_counter  =   number_format($pulse_counter, 2);
+        if ($pulse_counter>80 && $image_view_count>30){
+            $popularity_counter    =   'Popular';
+        }else if ($pulse_counter>50 && $image_view_count>50){
+            $popularity_counter    =   'Upcoming';
+        }else{
+            $popularity_counter    =   'Fresh';
+        }
+
+        $images->pulse_counter = $pulse_counter;
+        $images->save();
 
         return $this->view->render($response, 'image/single.twig', [
             'image'     =>  $images,
@@ -110,7 +123,9 @@ class ImageController extends Controller
             'user'      =>  $user_name,
             'images_all_in_a_cateogry'  =>  $images_all_in_a_cateogry,
             'image_link_exif'           =>  $info,
-            'favorateOrNot' =>  $favorited
+            'favorateOrNot' =>  $favorited,
+            'pulse_counter' =>  $pulse_counter,
+            'popularity_counter'    =>  $popularity_counter
         ]);
     }
 

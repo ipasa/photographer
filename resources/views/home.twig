@@ -77,7 +77,7 @@
         <div class="container-full">
             <div id="gallery" class="row">
                 <div id="fourcol" class="portfolio">
-                    {% for image in images %}
+                    {% for image in images | slice(5,20)%}
                         <div class="box entry item-w1 item-h1 cat1">
                             <img src="upload_image/{{ image.image_link }}" alt="" class="img-responsive">
                             <div class="magnifier">
