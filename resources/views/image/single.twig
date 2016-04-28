@@ -57,12 +57,7 @@
                                 {% if auth.user.id==user.id %}
 
                                 {% else %}
-                                    <form action="{{ path_for('follow.store') }}" method="post">
-                                        <input type="hidden" name="follower_id" value="{{ auth.user.id }}">
-                                        <input type="hidden" name="followed_id" value="{{ user.id }}">
-                                        <button type="submit" class="btn btn-default btn-sm btn-normal">Follow</button>
-                                        {{ csrf.field | raw }}
-                                    </form>
+                                    {% include 'templates/partials/follow_form.twig' %}
                                 {% endif %}
                             {% else %}
                                 <a href="{{ path_for('auth.signin') }}">

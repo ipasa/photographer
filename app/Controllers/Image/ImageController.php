@@ -5,6 +5,7 @@ namespace App\Controllers\Image;
 use App\Controllers\Controller;
 use App\Models\Categorylist;
 use App\Models\Favorite;
+use App\Models\Follow;
 use App\Models\Image;
 use App\Models\User;
 use Illuminate\Database\Capsule\Manager as DB;
@@ -77,8 +78,8 @@ class ImageController extends Controller
 
     public function getSingleImage($request, $response, $args)
     {
+        //Finding a image already favoiated or not
         $id =   $args['id'];
-
         $user_id    =   $_SESSION['user'];
         $favorited  =   Favorite::where('user_id', $user_id)->lists('image_id');
         foreach ($favorited as $favorite)
@@ -117,6 +118,14 @@ class ImageController extends Controller
         $images->pulse_counter = $pulse_counter;
         $images->save();
 
+        //Finding a user already followed or not
+        $image_user_id = $images->user_id;
+        $followed   =   Follow::where('followed_id', $user_id)->lists('follower_id');
+        foreach ($followed as $follow)
+            $dataFollow[] =   $follow;
+
+        $followed  =   in_array($image_user_id, $dataFollow);
+
         return $this->view->render($response, 'image/single.twig', [
             'image'     =>  $images,
             'category'  =>  $category,
@@ -125,7 +134,8 @@ class ImageController extends Controller
             'image_link_exif'           =>  $info,
             'favorateOrNot' =>  $favorited,
             'pulse_counter' =>  $pulse_counter,
-            'popularity_counter'    =>  $popularity_counter
+            'popularity_counter'    =>  $popularity_counter,
+            'followOrNot'   =>  $followed
         ]);
     }
 

@@ -11,3 +11,18 @@ h3.text-center.less-bottom {
     padding-bottom: 0px;
     margin-bottom: 2px;
 }
+.unfollow{
+    color: #fff;
+    background-color: rgba(0,175,239,.8);
+}
+.unfollow:before{
+    content: "FOLLOWING";
+}
+.unfollow:hover{
+    color: #fff;
+    background-color: rgba(239, 38, 73, 0.8);
+}
+.unfollow:hover:before{
+    content: "UNFOLLOW";
+    color: #fff!important;
+}

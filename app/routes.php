@@ -14,7 +14,7 @@ $app->post('/favorites/store', 'ImageController:favoriteImage')->setName('favori
 $app->post('/favorites/destroy', 'ImageController:destroyFavoriteImage')->setName('favorites.destroy');
 
 $app->post('/user/follow', 'FollowController:followUser')->setName('follow.store');
-$app->post('/user/unfollow', 'FollowController:unFollowUser')->setName('follow.destroy');
+$app->post('/user/unfollow', 'FollowController:unFollowUser')->setName('follow.unFollowUser');
 
 /**
  * Guest Middleware
