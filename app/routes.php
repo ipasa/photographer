@@ -16,6 +16,10 @@ $app->post('/favorites/destroy', 'ImageController:destroyFavoriteImage')->setNam
 $app->post('/user/follow', 'FollowController:followUser')->setName('follow.store');
 $app->post('/user/unfollow', 'FollowController:unFollowUser')->setName('follow.unFollowUser');
 
+$app->get('/image/discover', 'ImageController:getDiscoverImage')->setName('discover');
+$app->get('/image/discoverByCategory', 'ImageController:getDiscoverImageByCategory')->setName('discoverByCategory');
+
+
 /**
  * Guest Middleware
  */
@@ -35,4 +39,6 @@ $app->group('', function () use ($app) {
 
     $app->get('/auth/password/change', 'PasswordController:getChangePassword')->setName('auth.password.change');
     $app->post('/auth/password/change', 'PasswordController:postChangePassword');
+
+    $app->get('/image/follower', 'ImageController:getImageFollow')->setName('followerImage');
 })->add(new App\Middleware\AuthMiddleware($container));

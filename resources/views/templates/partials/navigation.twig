@@ -60,6 +60,7 @@
                 <div id="navbar" class="navbar-collapse collapse">
                     <ul class="nav navbar-nav navbar-right">
                         <li><a href="{{ path_for('home') }}">Home</a></li>
+                        <li><a href="{{ path_for('discover') }}">Discover</a></li>
                         {#<li class="dropdown yamm-fw"><a href="#" data-toggle="dropdown" class="active dropdown-toggle">Home <span class="fa fa-angle-down"></span></a>#}
                         {#<ul class="dropdown-menu">#}
                         {#<li>#}
@@ -158,88 +159,9 @@
                                 </li>
                             </ul>
                         </li>
-                        <li class="dropdown yamm-half"><a href="#" data-toggle="dropdown" class="active dropdown-toggle">Elements <span class="fa fa-angle-down"></span></a>
-                            <ul class="dropdown-menu">
-                                <li>
-                                    <div class="yamm-content">
-                                        <div class="row">
-                                            <div class="col-sm-6 col-sm-6">
-                                                <ul>
-                                                    <li><a href="elements-accordions.html">Accordions</a></li>
-                                                    <li><a href="elements-tabs.html">Tab Elements</a></li>
-                                                    <li><a href="elements-progress.html">Progress Bar</a></li>
-                                                    <li><a href="elements-buttons.html">Buttons</a></li>
-                                                    <li><a href="elements-features-box.html">Features Box</a></li>
-                                                    <li><a href="elements-form-fields.html">Form Fields</a></li>
-                                                    <li><a href="elements-carousel.html">Carousel Elements</a></li>
-                                                    <li><a href="elements-et-lines.html">Icons ET-line</a></li>
-                                                    <li><a href="elements-font-awesome.html">Icons Font Awesome</a></li>
-                                                </ul>
-                                            </div><!-- end col -->
-                                            <div class="col-sm-6 col-sm-6">
-                                                <ul>
-                                                    <li><a href="elements-videos.html">Video & Sounds</a></li>
-                                                    <li><a href="elements-pricing.html">Pricing Tables</a></li>
-                                                    <li><a href="elements-light-dark.html">Light Dark Version</a></li>
-                                                    <li><a href="elements-header-1.html">Header Style 01</a></li>
-                                                    <li><a href="elements-header-2.html">Header Style 02</a></li>
-                                                    <li><a href="elements-header-3.html">Transparent Header</a></li>
-                                                    <li><a href="elements-footer-1.html">Footer Style 01</a></li>
-                                                    <li><a href="elements-footer-2.html">Footer Style 02</a></li>
-                                                    <li><a href="elements-typography.html">Typography</a></li>
-                                                </ul>
-                                            </div><!-- end col -->
-                                        </div><!-- end row -->
-                                    </div><!-- end yamm-content -->
-                                </li>
-                            </ul>
-                        </li>
-                        <li class="dropdown yamm-half"><a href="#" data-toggle="dropdown" class="active dropdown-toggle">Portfolio <span class="fa fa-angle-down"></span></a>
-                            <ul class="dropdown-menu">
-                                <li>
-                                    <div class="yamm-content">
-                                        <div class="row">
-                                            <div class="col-sm-6 col-sm-6">
-                                                <ul>
-                                                    <li><a href="portfolio-masonry-1.html">Masonry Style 01</a></li>
-                                                    <li><a href="portfolio-masonry-2.html">Masonry Style 02</a></li>
-                                                    <li><a href="portfolio-masonry-3.html"> Masonry Style 03</a></li>
-                                                    <li><a href="portfolio-masonry-4.html"> Masonry Style 04</a></li>
-                                                    <li><a href="portfolio-classic-1.html">Classic 01 Columns</a></li>
-                                                    <li><a href="portfolio-classic-2.html">Classic 02 Columns</a></li>
-                                                    <li><a href="portfolio-classic-3.html">Classic 03 Columns</a></li>
-                                                    <li><a href="portfolio-classic-4.html">Classic 04 Columns</a></li>
-                                                    <li><a href="portfolio-boxed-1.html">Boxed Gallery 02 Columns</a></li>
-                                                    <li><a href="portfolio-boxed-2.html">Boxed Gallery 03 Columns</a></li>
-                                                    <li><a href="portfolio-boxed-3.html">Boxed Gallery 04 Columns</a></li>
-                                                    <li><a href="portfolio-fullwidth-1.html">Fullwidth Gallery 02</a></li>
-                                                    <li><a href="portfolio-fullwidth-2.html">Fullwidth Gallery 03</a></li>
-                                                </ul>
-                                            </div><!-- end col -->
-                                            <div class="col-sm-6 col-sm-6">
-                                                <ul>
-                                                    <li><a href="portfolio-fullwidth-3.html">Fullwidth Gallery 04</a></li>
-                                                    <li><a href="portfolio-with-desc-1.html">With Description 01</a></li>
-                                                    <li><a href="portfolio-with-desc-2.html">With Description 02</a></li>
-                                                    <li><a href="portfolio-with-desc-3.html">With Description 03</a></li>
-                                                    <li><a href="portfolio-with-pagination.html">With Pagination</a></li>
-                                                    <li><a href="portfolio-single-image.html">Single Image Style</a></li>
-                                                    <li><a href="portfolio-single-gallery.html">Single Gallery Style</a></li>
-                                                    <li><a href="portfolio-single-audio.html">Single Audio Style</a></li>
-                                                    <li><a href="portfolio-single-video.html">Single Video Style</a></li>
-                                                    <li><a href="portfolio-single-01.html">Single Project 01</a></li>
-                                                    <li><a href="portfolio-single-02.html">Single Project 02</a></li>
-                                                    <li><a href="portfolio-single-03.html">Single Project 03</a></li>
 
-                                                    <li><a href="landing.html"><em>& More on Next Updates</em></a></li>
-                                                </ul>
-                                            </div><!-- end col -->
-                                        </div><!-- end row -->
-                                    </div><!-- end yamm-content -->
-                                </li>
-                            </ul>
-                        </li>
                         {% if auth.check %}
+                            <li><a href="{{ path_for('followerImage') }}">Activity</a></li>
                             <li><a href="{{ path_for('image.upload') }}">Upload</a></li>
                             <li class="dropdown yamm-drop"><a href="#" data-toggle="dropdown" class="active dropdown-toggle">{{ auth.user.name }} <span class="fa fa-angle-down"></span></a>
                                 <ul class="dropdown-menu" role="menu">

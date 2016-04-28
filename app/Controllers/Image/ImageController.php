@@ -194,4 +194,37 @@ class ImageController extends Controller
         $query = DB::select(DB::raw('DELETE FROM favorites WHERE user_id='.$user_id.' AND image_id='.$image_id));
         return $response->withRedirect($this->router->pathFor('singleimage', ['id' => $image_id] ));
     }
+
+    public function getDiscoverImage($request, $response, $args)
+    {
+        $all_image  =   Image::all()->sortByDesc('pulse_counter');
+        return $this->view->render($response, 'image/discover_all.twig', [
+            'images'    =>  $all_image
+        ]);
+    }
+
+    public function getDiscoverImageByCategory($request, $response, $args)
+    {
+        $image  =   new Image;
+        $data   =   $request->getParam('category_id');
+        $images =   $image->getAllImage($data);
+
+        return $response->withRedirect($this->router->pathFor('discover', [
+                'images' => $images
+            ]
+        ));
+    }
+
+    public function getImageFollow($request, $response, $args)
+    {
+        $user_id    =   $_SESSION['user'];
+        $image  = new Image;
+        $images = $image->getAllFollowedUserImage($user_id);
+
+        return $this->view->render($response, 'image/stream.twig', [
+            'images'         =>  $images
+        ]);
+
+    }
+
 }
