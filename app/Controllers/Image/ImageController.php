@@ -218,6 +218,21 @@ class ImageController extends Controller
         ]);
     }
 
+    public function getDiscoverImageByCategoryWithPulse($request, $response, $args)
+    {
+        $image      =   new Image;
+        $data       =   $request->getParam('category_id');
+        $pulse_id   =   $request->getParam('pulse_id');
+ 
+        $images     =   $image->getAllImageWithPulse($data, $pulse_id);
+        $category_name  = Categorylist::find($data);
+
+        return $this->view->render($response, 'image/render_all_with_pulse.twig', [
+            'images'        =>  $images,
+            'category_name' =>  $category_name
+        ]);
+    }
+
     public function getImageFollow($request, $response, $args)
     {
         $user_id    =   $_SESSION['user'];

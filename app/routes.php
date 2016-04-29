@@ -18,6 +18,7 @@ $app->post('/user/unfollow', 'FollowController:unFollowUser')->setName('follow.u
 
 $app->get('/image/discover', 'ImageController:getDiscoverImage')->setName('discover');
 $app->get('/image/discoverByCategory', 'ImageController:getDiscoverImageByCategory')->setName('discoverByCategory');
+$app->get('/image/discoverByPulse', 'ImageController:getDiscoverImageByCategoryWithPulse')->setName('discoverByPulse');
 
 
 /**

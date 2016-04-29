@@ -4,7 +4,7 @@
     <script>
         function loadDoc() {
             var category_id = document.getElementById("image_category_data").value;
-            console.log(category_id);
+            //console.log(category_id);
 
             $(document).ready(function () {
                 $.ajax({
@@ -21,6 +21,26 @@
                 });
             });
         }
+
+        function loadPulse(pulse_id){
+            var category_id = document.getElementById("image_category_data").value;
+
+            $(document).ready(function () {
+                $.ajax({
+                    url: "http://localhost/authentication/public/image/discoverByPulse?category_id=" + category_id+"&pulse_id="+pulse_id,
+                    type: "GET",
+                    success: function (data) {
+                        //console.log(data);
+                        $('.container-full').html(data);
+                    },
+                    error: function (data) {
+                        alert("Sorry, Some Error Occure");
+                        //console.log(data);
+                    }
+                });
+            });
+        }
+
     </script>
 
     <section class="section white border-top nopaddingbottom2">
@@ -30,9 +50,9 @@
                     <div class="text-left">
                         <nav class="portfolio-filter">
                             <ul class="list-inline">
-                                <li><a href="#" class="active">POPULER</a></li>
-                                <li><a href="#">UPCOMING</a></li>
-                                <li><a href="#">FRESH</a></li>
+                                <li><a href="" class="active" onclick="loadPulse(1)">POPULER</a></li>
+                                <li><a href="" onclick="loadPulse(2)">UPCOMING</a></li>
+                                <li><a href="" onclick="loadPulse(3)">FRESH</a></li>
                             </ul>
                         </nav>
                     </div><!-- end text-center -->
