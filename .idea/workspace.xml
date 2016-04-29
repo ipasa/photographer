@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="54159366-e550-435e-9359-cf567c2a9229" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/images/loader.gif" afterPath="$PROJECT_DIR$/public/images/loader.gif" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Controllers/Image/ImageController.php" afterPath="$PROJECT_DIR$/app/Controllers/Image/ImageController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/image/single.twig" afterPath="$PROJECT_DIR$/resources/views/image/single.twig" />
     </list>
     <ignored path="authentication.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -26,7 +23,18 @@
     <favorites_list name="authentication" />
   </component>
   <component name="FileEditorManager">
-    <leaf />
+    <leaf>
+      <file leaf-file-name="routes.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/routes.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="262">
+              <caret line="19" column="113" selection-start-line="19" selection-start-column="113" selection-end-line="19" selection-end-column="113" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -95,10 +103,11 @@
       </list>
     </option>
   </component>
-  <component name="JsBuildToolGruntFileManager" detection-done="true" />
-  <component name="JsBuildToolPackageJson" detection-done="true" />
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
   <component name="JsGulpfileManager">
     <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="PhpServers">
     <servers />
@@ -153,12 +162,26 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="authentication" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="authentication" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
       <pane id="Scratches">
         <subPane />
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -255,11 +278,13 @@
       <workItem from="1461866147517" duration="9182000" />
       <workItem from="1461908676816" duration="4761000" />
       <workItem from="1461917187155" duration="2370000" />
+      <workItem from="1461938689964" duration="51000" />
+      <workItem from="1461938775549" duration="141000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="128737000" />
+    <option name="totallyTimeSpent" value="128929000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="22" width="1382" height="754" extended-state="6" />
@@ -488,7 +513,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="144">
           <caret line="8" column="35" selection-start-line="8" selection-start-column="35" selection-end-line="8" selection-end-column="35" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -496,7 +520,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="126">
           <caret line="7" column="4" selection-start-line="7" selection-start-column="4" selection-end-line="9" selection-end-column="6" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -514,13 +537,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/templates/partials/follow_form.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="5" column="81" selection-start-line="5" selection-start-column="81" selection-end-line="5" selection-end-column="81" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/templates/partials/follow_form.twig" />
     <entry file="file://$PROJECT_DIR$/public/css/custom.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="468">
@@ -549,13 +566,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/image/stream.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="486">
-          <caret line="39" column="52" selection-start-line="39" selection-start-column="52" selection-end-line="39" selection-end-column="52" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/image/stream.twig" />
     <entry file="file://$PROJECT_DIR$/app/Controllers/HomeController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="288">
@@ -570,13 +581,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/routes.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="262">
-          <caret line="19" column="113" selection-start-line="19" selection-start-column="113" selection-end-line="19" selection-end-column="113" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/templates/app.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="198">
@@ -584,32 +588,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/image/render_all.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="504">
-          <caret line="28" column="52" selection-start-line="28" selection-start-column="52" selection-end-line="28" selection-end-column="52" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/image/discover_all.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="450">
-          <caret line="25" column="63" selection-start-line="25" selection-start-column="63" selection-end-line="25" selection-end-column="63" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/image/render_all.twig" />
+    <entry file="file://$PROJECT_DIR$/resources/views/image/discover_all.twig" />
     <entry file="file://$PROJECT_DIR$/app/Models/Image.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="504">
           <caret line="29" column="165" selection-start-line="29" selection-start-column="165" selection-end-line="29" selection-end-column="165" />
-          <folding>
-            <marker date="1461913369456" expanded="true" signature="626:737" placeholder="SELECT image... images" />
-            <marker date="1461913369456" expanded="true" signature="777:918" placeholder="SELECT image... images" />
-            <marker date="1461913369456" expanded="true" signature="1060:1151" placeholder="SELECT * FRO... images" />
-            <marker date="1461913369456" expanded="true" signature="1060:1152" placeholder="SELECT * FRO... images" />
-            <marker date="1461913369456" expanded="true" signature="1060:1220" placeholder="SELECT * FRO... images" />
-            <marker date="1461913369456" expanded="true" signature="1153:1211" placeholder="SELECT follo... follows" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -617,23 +601,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="232">
           <caret line="111" column="58" selection-start-line="111" selection-start-column="58" selection-end-line="111" selection-end-column="58" />
-          <folding>
-            <element signature="e#289#415#0#PHP" expanded="false" />
-            <element signature="e#421#2603#0#PHP" expanded="false" />
-            <element signature="e#861#1282#0#PHP" expanded="false" />
-            <element signature="e#883#1281#1#PHP" expanded="false" />
-            <element signature="e#1362#1675#0#PHP" expanded="false" />
-            <element signature="e#1716#2597#0#PHP" expanded="false" />
-            <element signature="e#1922#2291#0#PHP" expanded="false" />
-            <element signature="e#1936#2290#1#PHP" expanded="false" />
-            <element signature="e#2470#2597#0#PHP" expanded="false" />
-            <element signature="e#5243#5861#0#PHP" expanded="false" />
-            <element signature="e#6589#7227#0#PHP" expanded="false" />
-            <element signature="e#7233#7546#0#PHP" expanded="false" />
-            <element signature="e#7552#7995#0#PHP" expanded="false" />
-            <element signature="e#8001#8328#0#PHP" expanded="false" />
-            <marker date="1461919177082" expanded="false" signature="7044:7106" placeholder="DELETE FROM " />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -641,6 +608,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="144">
           <caret line="8" column="22" selection-start-line="8" selection-start-column="22" selection-end-line="8" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/routes.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="262">
+          <caret line="19" column="113" selection-start-line="19" selection-start-column="113" selection-end-line="19" selection-end-column="113" />
           <folding />
         </state>
       </provider>
