@@ -170,6 +170,7 @@
                                             <div class="row">
                                                 <div class="col-sm-12">
                                                     <ul>
+                                                        <li><a href="{{ path_for('user.profile',{'id': auth.user.id }) }}">My Profile</a></li>
                                                         <li><a href="{{ path_for('auth.password.change') }}">Change Password</a></li>
                                                         <li><a href="{{ path_for('auth.signout') }}">Log Out</a></li>
                                                     </ul>
@@ -201,13 +202,6 @@
                                 </ul><!-- end dropdown-menu -->
                             </li><!-- end standard drop down -->
                         {% endif %}
-
-                        <li>
-                            <div class="social">
-                                <a href="#"><i class="icon icon-facebook"></i></a>
-                                <a href="#"><i class="icon icon-twitter"></i></a>
-                            </div><!-- end social -->
-                        </li>
                     </ul>
                 </div><!--/.nav-collapse -->
             </nav>

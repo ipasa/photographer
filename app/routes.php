@@ -20,6 +20,8 @@ $app->get('/image/discover', 'ImageController:getDiscoverImage')->setName('disco
 $app->get('/image/discoverByCategory', 'ImageController:getDiscoverImageByCategory')->setName('discoverByCategory');
 $app->get('/image/discoverByPulse', 'ImageController:getDiscoverImageByCategoryWithPulse')->setName('discoverByPulse');
 
+$app->get('/user/profile/{id}', 'ProfileController:index')->setName('user.profile');
+
 
 /**
  * Guest Middleware

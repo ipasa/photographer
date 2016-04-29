@@ -40,13 +40,13 @@
                                         {% endif %}
                                     </div>
                                     <br>
-                                    <div class="input-group padding-left">
-                                        <div class="checkbox">
-                                            <label>
-                                                <input id="login-remember1" type="checkbox" name="remember" value="1"> Remember me
-                                            </label>
-                                        </div>
-                                    </div>
+                                    {#<div class="input-group padding-left">#}
+                                        {#<div class="checkbox">#}
+                                            {#<label>#}
+                                                {#<input id="login-remember1" type="checkbox" name="remember" value="1"> Remember me#}
+                                            {#</label>#}
+                                        {#</div>#}
+                                    {#</div>#}
                                     <hr>
                                     <div class="form-group row">
                                         <div class="col-sm-12 controls clearfix">
@@ -54,7 +54,7 @@
                                                 <button type="submit" id="btn-login" class="btn btn-normal btn-primary">Login</button>
                                             </div>
                                             <div class="pull-right">
-                                                <a href="#">Forget Password?</a>
+                                                <a href="{{ path_for('auth.signup') }}">Sign Up for an account</a>
                                             </div>
                                         </div>
                                     </div>

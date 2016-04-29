@@ -66,7 +66,7 @@ class ImageController extends Controller
                 'user_id'           =>  $user_id,
             ]);
 
-            $this->flash->addMessage('success', 'You have been Signed Up Successfully');
+            $this->flash->addMessage('success', 'You Successfully Upload a Image');
 
             return $response->withRedirect($this->router->pathFor('home'));
         } catch (\Exception $e) {
@@ -80,10 +80,12 @@ class ImageController extends Controller
     {
         //Finding a image already favoiated or not
         $id =   $args['id'];
+        $data   =   array();
         $user_id    =   $_SESSION['user'];
         $favorited  =   Favorite::where('user_id', $user_id)->lists('image_id');
-        foreach ($favorited as $favorite)
+        foreach ($favorited as $favorite){
             $data[] =   $favorite;
+        }
 
         $favorited  =   in_array($id, $data);
 

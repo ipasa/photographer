@@ -44,7 +44,7 @@
 
                     <div class="contact-details portfolio-details">
                         <div class="why-us-right text-left wow fadeInRight" data-wow-duration="1s" data-wow-delay="0.9s">
-                            <h4>{{ user.name }}</h4>
+                            <a href="{{ path_for('user.profile',{'id': user.id }) }}"><h4>{{ user.name }}</h4></a>
 
                             {% if auth.user %}
                                 {% if auth.user.id==user.id %}

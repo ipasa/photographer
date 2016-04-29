@@ -85,6 +85,10 @@ $container['FollowController'] = function ($container) {
     return new App\Controllers\Image\FollowController($container);
 };
 
+$container['ProfileController'] = function ($container) {
+    return new App\Controllers\Profile\ProfileController($container);
+};
+
 $container['PasswordController'] = function ($container) {
     return new App\Controllers\Auth\PasswordController($container);
 };
