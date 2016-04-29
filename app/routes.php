@@ -23,6 +23,7 @@ $app->get('/image/discoverByPulse', 'ImageController:getDiscoverImageByCategoryW
 $app->get('/user/profile/{id}', 'ProfileController:index')->setName('user.profile');
 
 
+
 /**
  * Guest Middleware
  */
@@ -44,4 +45,6 @@ $app->group('', function () use ($app) {
     $app->post('/auth/password/change', 'PasswordController:postChangePassword');
 
     $app->get('/image/follower', 'ImageController:getImageFollow')->setName('followerImage');
+
+    $app->get('/user/can_follow', 'ProfileController:canFollow')->setName('user.canfollow');
 })->add(new App\Middleware\AuthMiddleware($container));
