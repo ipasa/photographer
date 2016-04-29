@@ -108,14 +108,15 @@ class ImageController extends Controller
         $pulse_counter  =   ($image_rating*100)/$image_view_count;
         $pulse_counter  =   number_format($pulse_counter, 2);
         if ($pulse_counter>80 && $image_view_count>30){
-            $popularity_counter    =   'Popular';
-        }else if ($pulse_counter>50 && $image_view_count>50){
-            $popularity_counter    =   'Upcoming';
+            $popularity_counter    =   'popular';
+        }else if ($pulse_counter>30 && $image_view_count>30){
+            $popularity_counter    =   'upcoming';
         }else{
-            $popularity_counter    =   'Fresh';
+            $popularity_counter    =   'fresh';
         }
 
-        $images->pulse_counter = $pulse_counter;
+        $images->pulse_counter  = $pulse_counter;
+        $images->popularity     = $popularity_counter;
         $images->save();
 
         //Finding a user already followed or not
@@ -164,7 +165,7 @@ class ImageController extends Controller
 
         $images = Image::where('id', $image_id)->first();
         $image_rating_count =   $images->rating_counter;
-        $image_rating_count =   $image_rating_count+5;
+        $image_rating_count =   $image_rating_count+1;
 
         $images->rating_counter = $image_rating_count;
         $images->save();
