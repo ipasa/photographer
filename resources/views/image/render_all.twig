@@ -1,0 +1,152 @@
+{#CSS include for only this custom page#}
+
+<link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+
+<link rel="stylesheet" type="text/css" href="{{ base_url() }}/fonts/font-awesome-4.3.0/css/font-awesome.min.css">
+<link rel="stylesheet" type="text/css" href="{{ base_url() }}/css/et-line.css">
+<link rel="stylesheet" type="text/css" href="{{ base_url() }}/css/bootstrap.css">
+<link rel="stylesheet" type="text/css" href="{{ base_url() }}/css/animate.css">
+<link rel="stylesheet" type="text/css" href="{{ base_url() }}/css/carousel.css">
+<!-- SLIDER REVOLUTION 4.x CSS SETTINGS -->
+<link rel="stylesheet" type="text/css" href="{{ base_url() }}/css/extralayers.css" media="screen"/>
+<link rel="stylesheet" type="text/css" href="{{ base_url() }}/rs-plugin/css/settings.css" media="screen"/>
+<link rel="stylesheet" type="text/css" href="{{ base_url() }}/css/style.css">
+
+<!-- Magnific Popup core CSS file -->
+<link rel="stylesheet" href="{{ base_url() }}/css/magnific-popup.css">
+
+<!-- COLORS -->
+<link rel="stylesheet" type="text/css" href="{{ base_url() }}/css/custom.css">
+<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+
+{#Only render this page for Ajax Request#}
+{#<div class="container-full">#}
+<div class="row">
+    <div class="col-md-12">
+        <div class="custom-title text-center wow fadeIn">
+            <h2>Category -
+                <mark>{{ category_name.category_name }}</mark>
+            </h2>
+        </div><!-- end custom-title -->
+    </div><!-- end col -->
+</div><!-- end row -->
+
+<div id="gallery" class="row">
+    <div id="fourcol" class="portfolio">
+        {% for image in images %}
+            <div class="box entry item-w1 item-h1 cat1">
+                <img src="{{ base_url() }}/upload_image/{{ image.image_link }}" alt=""
+                     class="img-responsive">
+                <div class="magnifier">
+                    <div class="visible-buttons">
+                        <h4>
+                            <a href="{{ path_for('singleimage', {'id': image.id}) }}">{{ image.image_title }}</a>
+                        </h4>
+                        <p>{{ image.image_description }}</p>
+                    </div>
+                </div>
+            </div><!-- end box -->
+        {% endfor %}
+
+    </div><!-- end portfolio -->
+</div><!-- end gallery -->
+{#</div><!-- end container-fluid -->#}
+
+{#JS include for only this custom page#}
+<script src="{{ base_url() }}/js/bootstrap.min.js"></script>
+<script src="{{ base_url() }}/js/retina.js"></script>
+<script src="{{ base_url() }}/js/wow.js"></script>
+<script src="{{ base_url() }}/js/progress.js"></script>
+<script src="{{ base_url() }}/js/carousel.js"></script>
+<script src="{{ base_url() }}/js/parallax.min.js"></script>
+<!-- CUSTOM PLUGINS -->
+<script src="{{ base_url() }}/js/custom.js"></script>
+<!-- PORTFOLIO -->
+<script src="{{ base_url() }}/js/isotope.js"></script>
+<script src="{{ base_url() }}/js/imagesloaded.pkgd.js"></script>
+<script src="{{ base_url() }}/js/masonry-fullwidth.js"></script>
+<!-- SLIDER REV -->
+<script src="{{ base_url() }}/rs-plugin/js/jquery.themepunch.tools.min.js"></script>
+<script src="{{ base_url() }}/rs-plugin/js/jquery.themepunch.revolution.min.js"></script>
+
+<!-- Magnific Popup core JS file -->
+<script src="{{ base_url() }}/js/jquery.magnific-popup.min.js"></script>
+<script>
+    jQuery(document).ready(function () {
+        jQuery('.tp-banner').show().revolution(
+                {
+                    dottedOverlay: "none",
+                    delay: 16000,
+                    startwidth: 1170,
+                    startheight: 700,
+                    hideThumbs: 200,
+                    thumbWidth: 100,
+                    thumbHeight: 50,
+                    thumbAmount: 5,
+                    navigationType: "none",
+                    navigationArrows: "solo",
+                    navigationStyle: "preview3",
+                    touchenabled: "on",
+                    onHoverStop: "on",
+                    swipe_velocity: 0.7,
+                    swipe_min_touches: 1,
+                    swipe_max_touches: 1,
+                    drag_block_vertical: false,
+                    parallax: "mouse",
+                    parallaxBgFreeze: "on",
+                    parallaxLevels: [7, 4, 3, 2, 5, 4, 3, 2, 1, 0],
+                    keyboardNavigation: "off",
+                    navigationHAlign: "center",
+                    navigationVAlign: "bottom",
+                    navigationHOffset: 0,
+                    navigationVOffset: 20,
+                    soloArrowLeftHalign: "left",
+                    soloArrowLeftValign: "center",
+                    soloArrowLeftHOffset: 20,
+                    soloArrowLeftVOffset: 0,
+                    soloArrowRightHalign: "right",
+                    soloArrowRightValign: "center",
+                    soloArrowRightHOffset: 20,
+                    soloArrowRightVOffset: 0,
+                    shadow: 0,
+                    fullWidth: "off",
+                    fullScreen: "off",
+                    spinner: "spinner4",
+                    stopLoop: "off",
+                    stopAfterLoops: -1,
+                    stopAtSlide: -1,
+                    shuffle: "off",
+                    autoHeight: "off",
+                    forceFullWidth: "off",
+                    hideThumbsOnMobile: "off",
+                    hideNavDelayOnMobile: 1500,
+                    hideBulletsOnMobile: "off",
+                    hideArrowsOnMobile: "off",
+                    hideThumbsUnderResolution: 0,
+                    hideSliderAtLimit: 0,
+                    hideCaptionAtLimit: 0,
+                    hideAllCaptionAtLilmit: 0,
+                    startWithSlide: 0,
+                    fullScreenOffsetContainer: ""
+                });
+    });
+</script>
+<script>
+    $(document).ready(function() {
+        $('.image-popup-no-margins').magnificPopup({
+            type: 'image',
+            closeOnContentClick: true,
+            closeBtnInside: false,
+            fixedContentPos: true,
+            mainClass: 'mfp-no-margins mfp-with-zoom', // class to remove default margin from left and right side
+            image: {
+                verticalFit: true
+            },
+            zoom: {
+                enabled: true,
+                duration: 300 // don't foget to change the duration also in CSS
+            }
+        });
+    });
+</script>

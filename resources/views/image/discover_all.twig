@@ -3,34 +3,28 @@
 {% block content %}
     <script>
         function loadDoc() {
-            var category_id =   document.getElementById("image_category_data").value;
+            var category_id = document.getElementById("image_category_data").value;
+            console.log(category_id);
 
-            var xhttp = new XMLHttpRequest();
-            xhttp.onreadystatechange = function() {
-
-                if (xhttp.readyState == 4 && xhttp.status == 200) {
-                    //alert(xhttp.responseText);
-                    document.getElementById("demo").innerHTML = xhttp.responseText;
-                }
-            };
-            xhttp.open("GET", "http://localhost/authentication/public/image/discoverByCategory?category_id="+category_id, true);
-            xhttp.send();
+            $(document).ready(function () {
+                $.ajax({
+                    url: "http://localhost/authentication/public/image/discoverByCategory?category_id=" + category_id,
+                    type: "GET",
+                    success: function (data) {
+                        //console.log(data);
+                        $('.container-full').html(data);
+                    },
+                    error: function (data) {
+                        alert("Sorry, Some Error Occure");
+                        //console.log(data);
+                    }
+                });
+            });
         }
     </script>
 
     <section class="section white border-top nopaddingbottom2">
-
         <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="custom-title text-center wow fadeIn">
-                        <h2>Category -
-                            <mark>{{ category_name.category_name}}</mark>
-                        </h2>
-                    </div><!-- end custom-title -->
-                </div><!-- end col -->
-            </div><!-- end row -->
-
             <div class="row">
                 <div class="col-md-6">
                     <div class="text-left">
@@ -47,7 +41,9 @@
                 <div class="col-md-2 col-md-offset-4">
                     <div class="text-right">
                         <div class="select_wrap">
-                            <select name="image_category" id="image_category_data" class="form-control" onchange="loadDoc()">
+                            <select name="image_category" id="image_category_data" class="form-control"
+                                    onchange="loadDoc()">
+                                <option value="43">All Images</option>
                                 {% for category in categoryList.categories %}
                                     <option value="{{ category.id }}">{{ category.category_name }}</option>
                                 {% endfor %}
@@ -58,25 +54,28 @@
             </div>
 
         </div><!-- end container -->
-
-        <div class="container-full">
-            <div id="gallery" class="row">
-                <div id="fourcol" class="portfolio">
-                    {% for image in images %}
-                        <div class="box entry item-w1 item-h1 cat1">
-                            <img src="{{ base_url() }}/upload_image/{{ image.image_link }}" alt="" class="img-responsive">
-                            <div class="magnifier">
-                                <div class="visible-buttons">
-                                    <h4><a href="{{ path_for('singleimage', {'id': image.id}) }}">{{ image.image_title }}</a></h4>
-                                    <p>{{ image.image_description }}</p>
+        {#<div id="test">#}
+            <div class="container-full">
+                <div id="gallery" class="row">
+                    <div id="fourcol" class="portfolio">
+                        {% for image in images %}
+                            <div class="box entry item-w1 item-h1 cat1">
+                                <img src="{{ base_url() }}/upload_image/{{ image.image_link }}" alt=""
+                                     class="img-responsive">
+                                <div class="magnifier">
+                                    <div class="visible-buttons">
+                                        <h4>
+                                            <a href="{{ path_for('singleimage', {'id': image.id}) }}">{{ image.image_title }}</a>
+                                        </h4>
+                                        <p>{{ image.image_description }}</p>
+                                    </div>
                                 </div>
-                            </div>
-                        </div><!-- end box -->
-                    {% endfor %}
+                            </div><!-- end box -->
+                        {% endfor %}
 
-                </div><!-- end portfolio -->
-            </div><!-- end gallery -->
-        </div><!-- end container-fluid -->
+                    </div><!-- end portfolio -->
+                </div><!-- end gallery -->
+            </div><!-- end container-fluid -->
+        {#</div>#}
     </section><!-- end section -->
-
 {% endblock %}

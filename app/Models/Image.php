@@ -24,7 +24,11 @@ class Image extends Model{
     }
 
     public function getAllImage($id){
-        $query = "SELECT images.*, users.name FROM images, users where images.image_category=$id AND images.user_id=users.id ORDER BY images.pulse_counter DESC";
+        if ($id == 43){
+            $query = "SELECT images.*, users.name FROM images, users where images.user_id=users.id ORDER BY images.pulse_counter DESC";
+        }else{
+            $query = "SELECT images.*, users.name FROM images, users where images.image_category=$id AND images.user_id=users.id ORDER BY images.pulse_counter DESC";
+        }
         return DB::select(DB::raw($query));
     }
 

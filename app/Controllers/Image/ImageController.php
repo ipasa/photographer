@@ -199,7 +199,8 @@ class ImageController extends Controller
     {
         $all_image  =   Image::all()->sortByDesc('pulse_counter');
         return $this->view->render($response, 'image/discover_all.twig', [
-            'images'    =>  $all_image
+            'images'    =>  $all_image,
+            'category_name' =>  "All Category"
         ]);
     }
 
@@ -208,11 +209,12 @@ class ImageController extends Controller
         $image  =   new Image;
         $data   =   $request->getParam('category_id');
         $images =   $image->getAllImage($data);
+        $category_name  = Categorylist::find($data);
 
-        return $response->withRedirect($this->router->pathFor('discover', [
-                'images' => $images
-            ]
-        ));
+        return $this->view->render($response, 'image/render_all.twig', [
+            'images'        =>  $images,
+            'category_name' =>  $category_name
+        ]);
     }
 
     public function getImageFollow($request, $response, $args)
