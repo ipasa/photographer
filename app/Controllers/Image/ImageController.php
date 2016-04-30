@@ -66,7 +66,7 @@ class ImageController extends Controller
                 'user_id'           =>  $user_id,
             ]);
 
-            $this->flash->addMessage('success', 'You have been Signed Up Successfully');
+            $this->flash->addMessage('success', 'You Successfully Upload a Image');
 
             return $response->withRedirect($this->router->pathFor('home'));
         } catch (\Exception $e) {
@@ -80,10 +80,14 @@ class ImageController extends Controller
     {
         //Finding a image already favoiated or not
         $id =   $args['id'];
+        $data   =   array();
+
         $user_id    =   $_SESSION['user'];
+
         $favorited  =   Favorite::where('user_id', $user_id)->lists('image_id');
-        foreach ($favorited as $favorite)
+        foreach ($favorited as $favorite){
             $data[] =   $favorite;
+        }
 
         $favorited  =   in_array($id, $data);
 
@@ -107,7 +111,7 @@ class ImageController extends Controller
 
         $pulse_counter  =   ($image_rating*100)/$image_view_count;
         $pulse_counter  =   number_format($pulse_counter, 2);
-        if ($pulse_counter>80 && $image_view_count>30){
+        if ($pulse_counter>50 && $image_view_count>30){
             $popularity_counter    =   'popular';
         }else if ($pulse_counter>30 && $image_view_count>30){
             $popularity_counter    =   'upcoming';
@@ -213,6 +217,21 @@ class ImageController extends Controller
         $category_name  = Categorylist::find($data);
 
         return $this->view->render($response, 'image/render_all.twig', [
+            'images'        =>  $images,
+            'category_name' =>  $category_name
+        ]);
+    }
+
+    public function getDiscoverImageByCategoryWithPulse($request, $response, $args)
+    {
+        $image      =   new Image;
+        $data       =   $request->getParam('category_id');
+        $pulse_id   =   $request->getParam('pulse_id');
+ 
+        $images     =   $image->getAllImageWithPulse($data, $pulse_id);
+        $category_name  = Categorylist::find($data);
+
+        return $this->view->render($response, 'image/render_all_with_pulse.twig', [
             'images'        =>  $images,
             'category_name' =>  $category_name
         ]);

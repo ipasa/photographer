@@ -162,7 +162,6 @@
 
                         {% if auth.check %}
                             <li><a href="{{ path_for('followerImage') }}">Activity</a></li>
-                            <li><a href="{{ path_for('image.upload') }}">Upload</a></li>
                             <li class="dropdown yamm-drop"><a href="#" data-toggle="dropdown" class="active dropdown-toggle">{{ auth.user.name }} <span class="fa fa-angle-down"></span></a>
                                 <ul class="dropdown-menu" role="menu">
                                     <li>
@@ -170,6 +169,8 @@
                                             <div class="row">
                                                 <div class="col-sm-12">
                                                     <ul>
+                                                        <li><a href="{{ path_for('user.canfollow') }}">User Recommendation</a></li>
+                                                        <li><a href="{{ path_for('user.profile',{'id': auth.user.id }) }}">My Profile</a></li>
                                                         <li><a href="{{ path_for('auth.password.change') }}">Change Password</a></li>
                                                         <li><a href="{{ path_for('auth.signout') }}">Log Out</a></li>
                                                     </ul>
@@ -179,6 +180,7 @@
                                     </li>
                                 </ul><!-- end dropdown-menu -->
                             </li><!-- end standard drop down -->
+                            <li><a href="{{ path_for('image.upload') }}">Upload</a></li>
                         {% else %}
                             <li class="dropdown yamm-drop">
                                 <a href="#" data-toggle="dropdown" class="active dropdown-toggle">
@@ -201,13 +203,6 @@
                                 </ul><!-- end dropdown-menu -->
                             </li><!-- end standard drop down -->
                         {% endif %}
-
-                        <li>
-                            <div class="social">
-                                <a href="#"><i class="icon icon-facebook"></i></a>
-                                <a href="#"><i class="icon icon-twitter"></i></a>
-                            </div><!-- end social -->
-                        </li>
                     </ul>
                 </div><!--/.nav-collapse -->
             </nav>

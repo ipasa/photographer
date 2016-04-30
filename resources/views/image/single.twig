@@ -22,6 +22,11 @@
                             <img src="{{ base_url() }}/upload_image/{{ image.image_link }}" alt=""
                                  class="img-responsive">
                         </a>
+
+                        <button type="button" class="btn btn-primary btn-normal btn-lg no-padding alignleft">
+                            Like - {{ image.rating_counter }}
+                        </button>
+
                         {% if auth.check %}
                             {% include 'templates/partials/favorite.twig' %}
                         {% else %}
@@ -44,7 +49,7 @@
 
                     <div class="contact-details portfolio-details">
                         <div class="why-us-right text-left wow fadeInRight" data-wow-duration="1s" data-wow-delay="0.9s">
-                            <h4>{{ user.name }}</h4>
+                            <a href="{{ path_for('user.profile',{'id': user.id }) }}"><h4>{{ user.name }}</h4></a>
 
                             {% if auth.user %}
                                 {% if auth.user.id==user.id %}
@@ -54,7 +59,7 @@
                                 {% endif %}
                             {% else %}
                                 <a href="{{ path_for('auth.signin') }}">
-                                    <button type="submit" class="btn btn-default btn-sm btn-normal">Pls login to Follow</button>
+                                    <button type="submit" class="btn btn-default btn-sm btn-normal">Please login to Follow</button>
                                 </a>
                             {% endif %}
                             <br><br>
@@ -135,7 +140,6 @@
                                                     {{ image_all_in_a_cateogry.image_title }}
                                                 </a>
                                             </h4>
-                                            <p>Web Design, Branding</p>
                                         </div>
                                     </div>
                                 </div><!-- end box -->

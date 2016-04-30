@@ -18,6 +18,10 @@ $app->post('/user/unfollow', 'FollowController:unFollowUser')->setName('follow.u
 
 $app->get('/image/discover', 'ImageController:getDiscoverImage')->setName('discover');
 $app->get('/image/discoverByCategory', 'ImageController:getDiscoverImageByCategory')->setName('discoverByCategory');
+$app->get('/image/discoverByPulse', 'ImageController:getDiscoverImageByCategoryWithPulse')->setName('discoverByPulse');
+
+$app->get('/user/profile/{id}', 'ProfileController:index')->setName('user.profile');
+
 
 
 /**
@@ -41,4 +45,6 @@ $app->group('', function () use ($app) {
     $app->post('/auth/password/change', 'PasswordController:postChangePassword');
 
     $app->get('/image/follower', 'ImageController:getImageFollow')->setName('followerImage');
+
+    $app->get('/user/can_follow', 'ProfileController:canFollow')->setName('user.canfollow');
 })->add(new App\Middleware\AuthMiddleware($container));

@@ -26,3 +26,9 @@ h3.text-center.less-bottom {
     content: "UNFOLLOW";
     color: #fff!important;
 }
+.green-color{
+    color: #88D18A;
+}
+.red-color{
+    color: #D81E5B;
+}

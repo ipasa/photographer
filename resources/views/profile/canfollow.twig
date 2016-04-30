@@ -1,0 +1,40 @@
+{% extends 'templates/app.twig' %}
+
+{% block content %}
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 col-sm-6 col-md-offset-3">
+                <h3 class="text-center">User Recommendation for you</h3>
+
+                <table class="table table-striped">
+                    <thead>
+                    <tr>
+                        <th class="text-center col-md-2">Status</th>
+                        <th>Name</th>
+                    </tr>
+                    </thead>
+
+                    <tbody>
+                    {% for item in items | slice(1,end) %}
+                        {% if item.status == 'Followed' %}
+                            {% set status=true %}
+                        {% else %}
+                            {% set status=false %}
+                        {% endif %}
+                        <tr>
+                            <td class="text-center">
+                                <i class="fa fa-check-square {{ status ? 'green-color' : 'red-color' }}"></i>
+                            </td>
+                            <td>
+                                <a href="{{ path_for('user.profile',{'id': item.user_id }) }}">
+                                    {{ item.user_name }}
+                                </a>
+                            </td>
+                        </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+            </div><!-- end col -->
+        </div>
+    </div>
+{% endblock %}
