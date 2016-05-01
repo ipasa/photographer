@@ -82,15 +82,6 @@ class ImageController extends Controller
         $id =   $args['id'];
         $data   =   array();
 
-        $user_id    =   $_SESSION['user'];
-
-        $favorited  =   Favorite::where('user_id', $user_id)->lists('image_id');
-        foreach ($favorited as $favorite){
-            $data[] =   $favorite;
-        }
-
-        $favorited  =   in_array($id, $data);
-
         $images = Image::where('id', $id)->first();
         $image_view_count = $images->view_counter;
         $image_view_count++;
@@ -125,11 +116,25 @@ class ImageController extends Controller
 
         //Finding a user already followed or not
         $image_user_id = $images->user_id;
-        $followed   =   Follow::where('followed_id', $user_id)->lists('follower_id');
-        foreach ($followed as $follow)
-            $dataFollow[] =   $follow;
 
-        $followed  =   in_array($image_user_id, $dataFollow);
+        if (isset($_SESSION['user'])){
+            $user_id    =   $_SESSION['user'];
+
+            $favorited  =   Favorite::where('user_id', $user_id)->lists('image_id');
+            foreach ($favorited as $favorite){
+                $data[] =   $favorite;
+            }
+
+            $favorited  =   in_array($id, $data);
+            $followed   =   Follow::where('followed_id', $user_id)->lists('follower_id');
+            foreach ($followed as $follow)
+                $dataFollow[] =   $follow;
+
+            $followed  =   in_array($image_user_id, $dataFollow);
+        }else{
+            $favorited  =   '';
+            $followed   =   '';
+        }
 
         return $this->view->render($response, 'image/single.twig', [
             'image'     =>  $images,
