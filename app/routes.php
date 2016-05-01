@@ -47,4 +47,9 @@ $app->group('', function () use ($app) {
     $app->get('/image/follower', 'ImageController:getImageFollow')->setName('followerImage');
 
     $app->get('/user/can_follow', 'ProfileController:canFollow')->setName('user.canfollow');
+
+    $app->get('/image/single/{id}/edit', 'ImageController:getImageEdit')->setName('singleimage.Edit');
+    $app->post('/image/update', 'ImageController:postImageEdit')->setName('singleimage.update');
+
+    $app->get('/image/single/{id}/delete', 'ImageController:deleteImage')->setName('singleimage.Delete');
 })->add(new App\Middleware\AuthMiddleware($container));

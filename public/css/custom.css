@@ -32,3 +32,9 @@ h3.text-center.less-bottom {
 .red-color{
     color: #D81E5B;
 }
+.denger{
+    color: #FFFFFF;
+}
+.denger:hover{
+    color: #000000;
+}

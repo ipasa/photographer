@@ -1,38 +1,40 @@
 {% extends 'templates/app.twig' %}
 
 {% block content %}
-    <div class="row">
-        <div class="col-md-6 col-md-offset-3">
-            <div class="panel panel-default">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 col-md-offset-3">
+                <div class="panel panel-default">
 
-                <div class="panel-heading">
-                    SignIn
-                </div>
+                    <div class="panel-heading">
+                        CHange Password
+                    </div>
 
-                <div class="panel-body">
-                    <form action="{{ path_for('auth.password.change') }}" method="post">
+                    <div class="panel-body">
+                        <form action="{{ path_for('auth.password.change') }}" method="post">
 
-                        <div class="form-group{{ errors.password ? ' has-error':'' }}">
-                            <label for="password_old">Current Password</label>
-                            <input type="password" class="form-control" name="password_old" id="password_old">
-                            {% if errors.password %}
-                                <span class="help-block">{{ errors.password_old | first }}</span>
-                            {% endif %}
-                        </div>
+                            <div class="form-group{{ errors.password ? ' has-error':'' }}">
+                                <label for="password_old">Current Password</label>
+                                <input type="password" class="form-control" name="password_old" id="password_old">
+                                {% if errors.password %}
+                                    <span class="help-block">{{ errors.password_old | first }}</span>
+                                {% endif %}
+                            </div>
 
-                        <div class="form-group{{ errors.password ? ' has-error':'' }}">
-                            <label for="password">Password</label>
-                            <input type="password" class="form-control" name="password" id="password">
-                            {% if errors.password %}
-                                <span class="help-block">{{ errors.password | first }}</span>
-                            {% endif %}
-                        </div>
+                            <div class="form-group{{ errors.password ? ' has-error':'' }}">
+                                <label for="password">Password</label>
+                                <input type="password" class="form-control" name="password" id="password">
+                                {% if errors.password %}
+                                    <span class="help-block">{{ errors.password | first }}</span>
+                                {% endif %}
+                            </div>
 
-                        <button type="submit" class="btn btn-default">Change Password</button>
+                            <button type="submit" class="btn btn-default">Change Password</button>
 
-                        {{ csrf.field | raw }}
+                            {{ csrf.field | raw }}
 
-                    </form>
+                        </form>
+                    </div>
                 </div>
             </div>
         </div>

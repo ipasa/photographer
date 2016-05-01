@@ -68,7 +68,8 @@ class ImageController extends Controller
 
             $this->flash->addMessage('success', 'You Successfully Upload a Image');
 
-            return $response->withRedirect($this->router->pathFor('home'));
+            //return $response->withRedirect($this->router->pathFor('home'));
+            return $response->withRedirect($this->router->pathFor('user.profile', ['id' => $user_id] ));
         } catch (\Exception $e) {
             // Fail!
             $errors = $file->getErrors();
@@ -252,6 +253,50 @@ class ImageController extends Controller
             'images'         =>  $images
         ]);
 
+    }
+
+    public function getImageEdit($request, $response, $args)
+    {
+        //Finding a image to edit
+        $id     =   $args['id'];
+        $images = Image::where('id', $id)->first();
+        if ($_SESSION['user'] == $images->user_id){
+            $category   = Categorylist::where('id', $images->image_category)->first();
+
+            return $this->view->render($response, 'image/edit_image.twig', [
+                'image'     =>  $images,
+                'category'  =>  $category
+            ]);
+        }else{
+            $this->flash->addMessage('Sorry', 'You have no authorization for edit this image');
+            return $response->withRedirect($this->router->pathFor('singleimage', ['id' => $id] ));
+        }
+    }
+
+    public function postImageEdit($request, $response, $args)
+    {
+        $image_id   =   $request->getParam('image_id');
+
+        $image = Image::find($image_id);
+
+        $image->image_title = $request->getParam('image_title');
+        $image->image_description = $request->getParam('image_description');
+        $image->image_category = $request->getParam('image_category');
+
+        $image->save();
+
+        $this->flash->addMessage('success', 'You Successfully Update a Image');
+        return $response->withRedirect($this->router->pathFor('singleimage', ['id' => $image_id] ));
+    }
+
+    public function deleteImage($request, $response, $args)
+    {
+        $user_id    =   $_SESSION['user'];
+        $image_id   =   $args['id'];
+        $query = DB::select(DB::raw('DELETE FROM images WHERE id='.$image_id));
+
+        $this->flash->addMessage('success', 'You Successfully Delete a Image');
+        return $response->withRedirect($this->router->pathFor('user.profile', ['id' => $user_id] ));
     }
 
 }

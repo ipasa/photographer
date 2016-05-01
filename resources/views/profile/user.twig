@@ -49,12 +49,17 @@
                                     <div class="magnifier">
                                         <div class="visible-buttons">
                                             <h4><a href="{{ path_for('singleimage', {'id': image.id}) }}">{{ image.image_title }}</a></h4>
-                                            <p>{{ image.image_description }}</p>
+
+                                            {% if auth.user.id == image.user_id %}
+                                                <br>
+                                                <h5>
+                                                    <a href="{{ path_for('singleimage.Edit', {'id': image.id}) }}">Edit This Image</a>
+                                                </h5>
+                                            {% endif %}
                                         </div>
                                     </div>
                                 </div><!-- end box -->
                             {% endfor %}
-
                     </div><!-- end portfolio -->
                 </div><!-- end gallery -->
             </div><!-- end container-fluid -->

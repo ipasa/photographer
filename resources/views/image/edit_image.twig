@@ -1,0 +1,70 @@
+{% extends 'templates/app.twig' %}
+
+{% block content %}
+    <section class="pageheader">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9">
+                    <h4>Image Edit Interface</h4>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section white">
+        <div class="container">
+
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="module">
+                        <div class="owl-single-portfolio-item">
+                            <img src="{{ base_url() }}/upload_image/{{ image.image_link }}" alt=""
+                                 class="img-responsive">
+                        </div>
+                        <button type="button" class="btn btn-primary btn-danger btn-lg no-padding alignright">
+                            <a class="denger" href="{{ path_for('singleimage.Delete', {'id': image.id}) }}">
+                                <i class="fa fa-trash" aria-hidden="true"></i></i> Delete This Image
+                            </a>
+                        </button>
+                    </div><!-- end module -->
+                </div><!-- end col -->
+
+                <div class="col-md-6">
+                    <div class="module">
+
+                        <form role="form" action="{{ path_for('singleimage.update') }}" method="POST">
+                            <div class="form-group">
+                                <label for="exampleInputEmail1">IMAGE TITLE</label>
+                                <input type="text" name="image_title" class="form-control" id="exampleInputEmail1"
+                                       value="{{ image.image_title }}" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="comments">IMAGE DESCRIPTION</label>
+                                <textarea class="form-control" name="image_description" id="comments"
+                                          rows="8">{{ image.image_description }}</textarea>
+                            </div>
+
+                            <div class="select_wrap">
+                                <select name="image_category" class="form-control">
+                                    {% for category in categoryList.categories %}
+                                        {% if category.id==image.image_category %}
+                                            {% set selectTest = true %}
+                                        {% else %}
+                                            {% set selectTest = false %}
+                                        {% endif %}
+                                        <option value="{{ category.id }}" {{ selectTest ? 'selected' : '' }}>{{ category.category_name }}</option>
+                                    {% endfor %}
+                                </select>
+                            </div>
+
+                            <input type="hidden" name="image_id" value="{{ image.id }}">
+                            <button type="submit" class="btn btn-default btn-normal">Update</button>
+                            {{ csrf.field | raw }}
+                        </form>
+
+                    </div><!-- end module -->
+                </div><!-- end col -->
+            </div><!-- end row -->
+        </div><!-- end container -->
+    </section><!-- end section -->
+{% endblock %}
