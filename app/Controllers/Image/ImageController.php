@@ -197,7 +197,7 @@ class ImageController extends Controller
 
         $images = Image::where('id', $image_id)->first();
         $image_rating_count =   $images->rating_counter;
-        $image_rating_count =   $image_rating_count-5;
+        $image_rating_count =   $image_rating_count-1;
 
         $images->rating_counter = $image_rating_count;
         $images->save();
